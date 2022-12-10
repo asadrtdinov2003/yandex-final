@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const TeamsPage = () => {
-  return (
-    <div>
-      Команды
-    </div>
-  );
-};
+function TeamsPage() {
+  return <div>Команды</div>;
+}
 
 export default TeamsPage;

@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const ProjectsPage = () => {
-  return (
-    <div>
-      Проекты
-    </div>
-  );
-};
+function ProjectsPage() {
+  return <div>Проекты</div>;
+}
 
 export default ProjectsPage;

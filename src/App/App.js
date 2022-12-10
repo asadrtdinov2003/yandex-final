@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Provider } from "react-redux";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { store } from "../store";
+import Layout from "../components/Layout/Layout";
+import TeamsPage from "../pages/TeamsPage/TeamsPage";
+import ProjectsPage from "../pages/ProjectsPage/ProjectsPage";
+import MainPage from "../pages/MainPage/MainPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            {/* Я без понятия какая страница показывается сначала так что
+                TODO: Исправить если неверно
+             */}
+            <Route index element={<MainPage />} />
+            <Route path="projects" element={<ProjectsPage />} />
+            <Route path="teams" element={<TeamsPage />} />
+            <Route path="*" element={<div>404</div>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

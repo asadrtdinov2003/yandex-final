@@ -18,18 +18,18 @@ const fakeData = {
 function ProjectsPage() {
   return (
     <>
-      <Header />
+      <Header/>
       <main>
         <div className={s.container}>
           <h1 className={s.title}>НАШИ ПРОЕКТЫ</h1>
           <div className={s.cards}>
-            <ProjectCard props={fakeData} />
-            <ProjectCard props={fakeData} />
+            <ProjectCard props={fakeData}/>
+            <ProjectCard props={fakeData}/>
           </div>
           <button className={s.bottom_btn}>загрузить еще</button>
         </div>
       </main>
-      <Footer />
+      <Footer/>
     </>
   );
 }

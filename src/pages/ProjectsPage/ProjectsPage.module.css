@@ -14,9 +14,12 @@
 }
 
 .cards {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-auto-flow: dense;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
 }
 
 .bottom_btn {

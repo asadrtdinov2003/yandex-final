@@ -1,0 +1,36 @@
+.container {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.title {
+  color: #DB4350;
+  font-size: 4vw;
+  text-align: center;
+  font-weight: 900;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.bottom_btn {
+  border: solid #DB4350 0.3vw;
+  border-radius: 1.3vw;
+  background: none;
+  font-size: 3vw;
+  display: block;
+  margin: 5% auto 0;
+  padding: 0.5% 3%;
+}
+
+.bottom_btn:hover {
+  cursor: pointer;
+}
+
+

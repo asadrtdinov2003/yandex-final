@@ -3,12 +3,11 @@ import React from "react";
 import styles from "./UserCard.module.scss";
 import bgImage from "../../imgs/card-bg.png";
 import avatarImage from "../../imgs/avatarPlaceholder1.png";
+import cn from "classnames";
 
-function UserCard({ name, job, stack, description, discord, github, telegram }) {
-
-
+function UserCard({ name, job, stack, description, discord, github, telegram, onClick, secondary = false }) {
   return (
-    <div className={styles.card__outer}>
+    <div className={cn(styles.card__outer, {[styles.card_secondary]: secondary })} onClick={e => onClick(e)}>
       <div className={styles.card}>
         <img src={bgImage} alt="new year background image" className={styles.card__bgImg} />
 
@@ -26,11 +25,11 @@ function UserCard({ name, job, stack, description, discord, github, telegram }) 
           </div>
           <p className={styles.card__description}>
             {description}
-          </p></div>
+          </p>
+        </div>
       </div>
     </div>
-  )
-    ;
+  );
 }
 
 export default UserCard;

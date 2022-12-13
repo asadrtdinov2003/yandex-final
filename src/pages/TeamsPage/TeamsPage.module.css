@@ -2,5 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(135.39% 135.39% at 50% 50%, #EF233C 0%, rgba(78, 118, 153, 0) 100%);
+  height: 100vh;
 }
 

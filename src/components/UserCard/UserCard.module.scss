@@ -12,8 +12,11 @@ $avatar-size: 200px;
 .card__outer {
   background-color: $bg-color;
   border-radius: $radius;
-  min-height: 70vh;
-  width: math.div(70vh, 3) * 2;
+  //min-height: 70vh;
+  //width: math.div(70vh, 3) * 2;
+  min-height: 600px;
+  width: 400px;
+  cursor: pointer;
 
   .card {
     min-height: math.div(70vh, 100) * 30;
@@ -53,7 +56,7 @@ $avatar-size: 200px;
       position: relative;
       top: math.div($avatar-size, -2);
       align-items: center;
-      padding: 1rem 10%;
+      padding: 1rem 9%;
       gap: 0.5rem;
 
       .heading {
@@ -103,5 +106,23 @@ $avatar-size: 200px;
       }
     }
   }
+}
 
+.card__outer:not(.card_secondary) {
+  z-index: 1;
+}
+
+.card__outer:last-child {
+  margin-left: -2%;
+}
+
+.card__outer:first-child {
+  margin-right: -2%;
+}
+
+.card_secondary {
+  filter: brightness(75%);
+  width: 340px;
+  height: 560px;
+  overflow: hidden;
 }

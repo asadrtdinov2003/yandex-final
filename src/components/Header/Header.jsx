@@ -10,7 +10,7 @@ function Header() {
   return (
     <>
       <header className={styles.header}>
-        <h1 className={classnames(styles.logo, styles.tab)}>WEB</h1>
+        <h2 className={classnames(styles.logo, styles.tab)}>WEB</h2>
         <nav className={classnames(styles.nav, active ? styles.active : "")}>
           <ul className={styles.nav__body}>
             <li className={classnames(styles.nav__item, styles.tab, styles.tab_green)}>Наша команда</li>

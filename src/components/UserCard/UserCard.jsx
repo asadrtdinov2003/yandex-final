@@ -1,19 +1,21 @@
 /* eslint-disable */
-import React from "react";
+import React, { useState } from "react";
 import styles from "./UserCard.module.scss";
-import bgImage from "../../imgs/card-bg.png";
-import avatarImage from "../../imgs/avatarPlaceholder1.png";
 import cn from "classnames";
+import {motion} from "framer-motion";
 
-function UserCard({ name, job, stack, description, discord, github, telegram, onClick, secondary = false }) {
+export const UserCard = React.forwardRef(({ name, avatar, background, job, stack, description, discord, github, telegram, onClick, secondary = false }, ref) => {
+
   return (
-    <div className={cn(styles.card__outer, {[styles.card_secondary]: secondary })} onClick={e => onClick(e)}>
+    <div className={cn(styles.card__outer, { [styles.card_secondary]: secondary })} onClick={e => {
+      onClick(e);
+    }} ref={ref}>
       <div className={styles.card}>
-        <img src={bgImage} alt="new year background image" className={styles.card__bgImg} />
+        <motion.img src={background} alt="new year background image" className={styles.card__bgImg} />
 
-        <div className={styles.card__avatarImg}>
-          <img src={avatarImage} alt="user photo" />
-        </div>
+        <motion.div className={styles.avatar} whileHover={{rotate: secondary ? 0 : 5}}>
+          <img src={avatar} alt="user photo" className={styles.avatar__content}  />
+        </motion.div>
         <div className={styles.card__info}>
           <h2 className={styles.heading}>{name}</h2>
           <h3 className={styles.card__job}>{job}</h3>
@@ -30,6 +32,10 @@ function UserCard({ name, job, stack, description, discord, github, telegram, on
       </div>
     </div>
   );
-}
+});
 
-export default UserCard;
+
+export const MUserCard = motion(UserCard);
+MUserCard.defaultProps = {
+  whileTap: { scale: 0.95 },
+};

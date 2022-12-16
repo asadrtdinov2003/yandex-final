@@ -35,12 +35,17 @@ $avatar-size: 200px;
       border-radius: $radius $radius 0 0;
     }
 
-    .card__avatarImg {
-      aspect-ratio: 1 / 1;
+    .avatar {
       width: $avatar-size;
       height: $avatar-size;
       position: relative;
       top: math.div($avatar-size, -2);
+
+      .avatar__content {
+        aspect-ratio: 1;
+        width: $avatar-size;
+        height: $avatar-size;
+      }
 
       &::after {
         content: url("../../imgs/hat1.svg");

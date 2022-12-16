@@ -2,7 +2,11 @@
 
 import React, { useState } from "react";
 import styles from "./TeamsPage.module.css";
-import UserCard from "../../components/UserCard/UserCard";
+import bgImage from "../../imgs/card-bg.png";
+import bgImage2 from "../../imgs/bg2.jpg";
+import avatarImage from "../../imgs/avatarPlaceholder1.png";
+import avatarImage2 from "../../imgs/avatar2.png";
+import {MUserCard} from "../../components/UserCard/UserCard";
 
 const users = [
   {
@@ -10,28 +14,36 @@ const users = [
     job: "Frontend-developer",
     stack: ["js", "html", "css"],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua "
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ",
+    background: bgImage,
+    avatar: avatarImage
   },
   {
     name: "Ковалев Тимур",
     job: "Frontend-developer",
     stack: ["scss", "react", "c++"],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    background: bgImage2,
+    avatar: avatarImage2
   },
   {
     name: "Роман",
     job: "Frontend-developer",
     stack: ["c#"],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    background: bgImage,
+    avatar: avatarImage2
   },
   {
     name: "Роман 2",
     job: "Frontend-developer",
     stack: ["c#"],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    background: bgImage2,
+    avatar: avatarImage
   }
 ];
 
@@ -40,10 +52,10 @@ function TeamsPage() {
 
   return (
     <main className={styles.page}>
-      <UserCard {...users.at(curUserIndex - 1)} secondary={true}
+      <MUserCard {...users.at(curUserIndex - 1)} secondary={true}
                 onClick={() => setCurUserIndex(prevIndex => (prevIndex - 1) === -1 ? users.length - 1 : prevIndex - 1)} />
-      <UserCard {...users[curUserIndex]} />
-      <UserCard {...users[(curUserIndex + 1) === users.length ? 0 : curUserIndex + 1]} secondary={true}
+      <MUserCard {...users[curUserIndex]} whileTap={{scale: 1.1}}/>
+      <MUserCard {...users[(curUserIndex + 1) === users.length ? 0 : curUserIndex + 1]} secondary={true}
                 onClick={() => setCurUserIndex(prevIndex => prevIndex + 1 >= users.length ? 0 : prevIndex + 1)} />
     </main>
   );

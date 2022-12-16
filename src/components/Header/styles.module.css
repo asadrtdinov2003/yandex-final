@@ -28,7 +28,7 @@
   max-height: 50px;
 }
 
-.logo:after {
+.logo::after {
   position: relative;
   left: 89px;
   top: -62px;

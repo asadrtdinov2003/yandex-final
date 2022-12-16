@@ -46,7 +46,7 @@ const users = [
     background: bgImage2,
     avatar: avatarImage
   }
-];
+].map(user => ({...user, discord: 'https://discord.com/', telegram: 'https://telegram.com', github: 'https://github.com'}));
 
 function TeamsPage() {
   const [curUserIndex, setCurUserIndex] = useState(1);

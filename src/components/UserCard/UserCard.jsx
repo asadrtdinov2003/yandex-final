@@ -2,37 +2,18 @@
 import React, { useRef } from "react";
 import styles from "./UserCard.module.scss";
 import cn from "classnames";
-import { motion } from "framer-motion";
-
-const avatarVideoVariants = {
-  initial: {
-    clipPath: "circle(35% at 50% 50%)", objectFit: "cover", transition: {}
-  },
-  hover: secondary => secondary || {
-    clipPath: [null, "circle(100% at 50%)"],
-    transition: {
-      duration: 1
-    },
-    transitionEnd: {
-      clipPath: [null],
-      width: [null, "100%"],
-      duration: 1
-    }
-  },
-  animate: {
-    opacity: 0
-  }
-};
-
-const avatarImageVariants = {
-  hover: {
-    rotate: 5
-  }
-};
-
-const bgImageVariants = {
-  hover: secondary => secondary || { height: 0, transition: { delay: .5 } }
-};
+import { motion, useAnimationControls } from "framer-motion";
+import {
+  avatarImageVariants,
+  avatarVideoVariants,
+  bgImageVariants,
+  cardVariants,
+  infoVariants,
+  linksVariants
+} from "./variants";
+import discordImage from "../../imgs/Discord.svg";
+import telegramImage from "../../imgs/Telegram.svg";
+import githubImage from "../../imgs/GitHub.svg";
 
 export const UserCard = React.forwardRef(({
                                             name,
@@ -48,31 +29,38 @@ export const UserCard = React.forwardRef(({
                                             secondary = false
                                           }, ref) => {
   const avatarImgRef = useRef(null);
+  const isVideo = avatar.split(".").at(-1) === "mp4";
+  const listAnimationControls = useAnimationControls();
 
   return (
-    <motion.div className={cn(styles.card__outer, { [styles.card_secondary]: secondary })} onClick={e => {
+    <motion.div variants={cardVariants} initial="initial" whileHover="hover" custom={{ isVideo, secondary }}
+                className={cn(styles.card__outer, { [styles.card_secondary]: secondary })} onClick={e => {
       onClick && onClick(e);
     }}
-                onHoverStart={() => {
+                onHoverStart={async () => {
+                  await listAnimationControls.start('hover');
                   avatarImgRef?.current?.play();
-                }} onHoverEnd={() => {
+                }} onHoverEnd={async () => {
+      await listAnimationControls.start('fade');
       avatarImgRef?.current?.pause();
     }}
                 ref={ref}>
-      <motion.div className={styles.card} initial="initial" whileHover="hover">
+      <motion.div className={styles.card}>
         <motion.img src={background} alt="new year background image" className={styles.card__bgImg}
                     variants={bgImageVariants} custom={secondary} />
-        {avatar.split(".").at(-1) === "mp4" ?
+        {isVideo ?
 
-            <motion.video  className={styles.avatar} custom={secondary} ref={avatarImgRef} variants={avatarVideoVariants}
-                          muted>
-              <source src={avatar} type="video/mp4" />
-            </motion.video>
+          <motion.video className={styles.avatar} custom={secondary} ref={avatarImgRef} variants={avatarVideoVariants}
+                        preload="auto"
+                        muted>
+            <source src={avatar} type="video/mp4" />
+          </motion.video>
           :
-          <motion.div className={cn(styles.avatar, styles.avatar_image)} variants={avatarImageVariants}>
+          <motion.div className={cn(styles.avatar, styles.avatar_image)} variants={avatarImageVariants}
+                      custom={secondary}>
             <img src={avatar} alt="user photo" className={styles.avatar_image} />
           </motion.div>}
-        <div className={styles.card__info}>
+        <motion.div className={styles.card__info} variants={infoVariants} custom={secondary}>
           <h2 className={styles.heading}>{name}</h2>
           <h3 className={styles.card__job}>{job}</h3>
           <ul className={styles.stack}>
@@ -84,7 +72,12 @@ export const UserCard = React.forwardRef(({
           <p className={styles.card__description}>
             {description}
           </p>
-        </div>
+          <motion.ul className={styles.links} variants={linksVariants} custom={secondary} animate={listAnimationControls}>
+            <li className={styles.links__item}><a href={discord}><img alt="discord" src={discordImage} /></a></li>
+            <li className={styles.links__item}><a href={telegram}><img alt="telegram" src={telegramImage} /></a></li>
+            <li className={styles.links__item}><a href={github}><img alt="github" src={githubImage} /></a></li>
+          </motion.ul>
+        </motion.div>
       </motion.div>
     </motion.div>
   );

@@ -1,0 +1,31 @@
+.footer {
+    min-width: calc(100% - 120px);
+    max-width: calc(100% - 120px);
+    min-height: 100px;
+    max-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EF233C;
+    padding: 0 60px;
+    color: #fff;
+}
+
+.footer__text, .footer__phone {
+    font-weight: 400;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+@media screen and (max-width: 450px) {
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer__text, .footer__phone {
+        margin: 8px 0;
+    }
+}

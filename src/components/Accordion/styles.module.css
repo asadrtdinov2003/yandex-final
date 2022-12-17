@@ -82,13 +82,13 @@
 }
 
 @media screen and (max-width: 600px) {
-    .accordion__title {
-        font-size: 24px;
-    }
+  .accordion__title {
+    font-size: 24px;
+  }
 }
 
 @media screen and (max-width: 400px) {
-    .accordion__title {
-        font-size: 18px;
-    }
+  .accordion__title {
+    font-size: 18px;
+  }
 }

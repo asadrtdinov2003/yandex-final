@@ -33,7 +33,7 @@ export const UserCard = React.forwardRef(({
   const listAnimationControls = useAnimationControls();
 
   return (
-    <motion.div variants={cardVariants} initial="initial" whileHover="hover" custom={{ isVideo, secondary }}
+    <motion.div variants={cardVariants} exit="exit" initial="initial" whileHover="hover" custom={{ isVideo, secondary }}
                 className={cn(styles.card__outer, { [styles.card_secondary]: secondary })} onClick={e => {
       onClick && onClick(e);
     }}

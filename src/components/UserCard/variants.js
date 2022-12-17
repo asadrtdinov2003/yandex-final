@@ -7,12 +7,13 @@ export const cardVariants = {
   },
   hover: ({ isVideo }) => ({
     overflow: isVideo ? "hidden" : null
-  })
+  }),
+  exit: { opacity: 0, transition: {duration: 0.2} }
 };
 
 export const avatarVideoVariants = {
   initial: {
-    clipPath: "circle(35% at 50% 50%)", objectFit: "cover",
+    clipPath: "circle(35% at 50% 50%)", objectFit: "cover"
     // filter: "initial"
   },
   hover: (secondary) => secondary || {
@@ -34,7 +35,7 @@ export const avatarVideoVariants = {
 export const avatarImageVariants = {
   hover: (secondary) => ({
     top: secondary ? null : 0,
-    marginTop: secondary ? '0' : "10%",
+    marginTop: secondary ? "0" : "10%",
     rotate: 5
   })
 };

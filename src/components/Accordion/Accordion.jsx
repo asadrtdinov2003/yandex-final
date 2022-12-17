@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
 
 function Reviews() {
   return (
     <>
       <p>Текст</p>
-      <button type="button" onClick={() => ({})}>Открыть</button>
+      <button type="button" onClick={() => ({})}>
+        Открыть
+      </button>
     </>
   );
 }

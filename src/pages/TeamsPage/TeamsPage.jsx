@@ -8,6 +8,7 @@ import avatarImage from "../../imgs/avatarPlaceholder1.png";
 import avatarImage2 from "../../imgs/avatar2.png";
 import avatarVideo from "../../imgs/ExampleVideo.mp4";
 import { MUserCard } from "../../components/UserCard/UserCard";
+// import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const users = [
   {
@@ -55,18 +56,19 @@ const users = [
 
 function TeamsPage() {
   const [curUserIndex, setCurUserIndex] = useState(1);
+  // const {width} = useWindowDimensions();
 
   return (
     <main className={styles.page}>
       <MUserCard {...users.at(curUserIndex - 1)} secondary={true}
                  onClick={() => setCurUserIndex(prevIndex => (prevIndex - 1) === -1 ? users.length - 1 : prevIndex - 1)}
-                 initial={{ rotate: -4, marginRight: "-5%", filter: "brightness(75%)" }}
+                 initial={{ rotate: -4, marginRight: "-5%", filter: "brightness(75%)", y: '100vh'}} animate={{y: 0}}
                  whileHover={{ y: -25, filter: "brightness(80%)" }} />
-      <MUserCard {...users[curUserIndex]} whileTap={{ scale: 1.1 }} initial={{ zIndex: 1 }} />
+      <MUserCard {...users[curUserIndex]} whileTap={{ scale: 1.1 }} initial={{ zIndex: 1, y: '100vh'}} animate={{y: 0}} />
       <MUserCard {...users[(curUserIndex + 1) === users.length ? 0 : curUserIndex + 1]} secondary={true}
-                 initial={{ rotate: 4, marginLeft: "-5%", filter: "brightness(75%)" }}
+                 initial={{ rotate: 4, marginLeft: "-5%", filter: "brightness(75%)",  y: '100vh' }} animate={{y: 0}}
                  whileHover={{ y: -25, filter: "brightness(80%)" }}
-                 onClick={() => setCurUserIndex(prevIndex => prevIndex + 1 >= users.length ? 0 : prevIndex + 1)} />
+                 onClick={() => setCurUserIndex(prevIndex => prevIndex + 1 >= users.length ? 0 : prevIndex + 1)}/>
     </main>
   );
 }

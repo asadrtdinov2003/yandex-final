@@ -12,23 +12,23 @@ $avatar-size: 200px;
 .card__outer {
   background-color: $bg-color;
   border-radius: $radius;
-  //min-height: 70vh;
-  //width: math.div(70vh, 3) * 2;
-  min-height: 600px;
-  width: 400px;
+  flex: 1;
+  aspect-ratio: 3 / 5;
 
   .card {
-    min-height: math.div(70vh, 100) * 30;
-    width: 100%;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     font-family: $font;
+    font-size: 1.5rem;
+    height: 100%;
+    width: 100%;
 
     .card__bgImg {
       width: 100%;
-      height: math.div(70vh, 100) * 30;
+      height: 20%;
       object-fit: cover;
       object-position: top;
       border-radius: $radius $radius 0 0;
@@ -41,10 +41,6 @@ $avatar-size: 200px;
       overflow: visible;
       width: 100%;
       height: $avatar-size;
-    }
-
-    .avatar__outer {
-      width: 100%;
     }
 
     .avatar::after {
@@ -63,17 +59,26 @@ $avatar-size: 200px;
     .card__info {
       display: flex;
       flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
       position: relative;
       top: math.div($avatar-size, -2);
       align-items: center;
       padding: 1rem 9%;
       gap: 0.5rem;
 
+
+      .card__user {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
       .heading {
         font-style: normal;
         font-weight: 800;
-        font-size: $heading-size;
         line-height: 29px;
+        font-size: 1.5em;
         margin: 0;
       }
 
@@ -114,9 +119,13 @@ $avatar-size: 200px;
       .card__description {
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 1.1em;
         line-height: 24px;
         margin: 0;
+        height: available;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding: 1rem;
       }
     }
 
@@ -127,7 +136,7 @@ $avatar-size: 200px;
       margin-block-end: 0;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
       flex-direction: row;
       opacity: 0;
       pointer-events: none;
@@ -137,13 +146,17 @@ $avatar-size: 200px;
     .links__item {
       filter: drop-shadow(0px 3px 3px #333);
     }
+
+    .links__item:hover {
+      filter: brightness(0.1);
+    }
   }
 }
 
 .card_secondary {
   filter: brightness(75%);
-  width: 340px;
-  height: 560px;
+  flex: 0.9;
+  aspect-ratio: 2 / 3;
   cursor: pointer;
   overflow: hidden;
 }

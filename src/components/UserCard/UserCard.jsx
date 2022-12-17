@@ -54,7 +54,7 @@ export const UserCard = React.forwardRef(({
         {isVideo ?
 
           <motion.video className={styles.avatar} custom={secondary} ref={avatarImgRef} variants={avatarVideoVariants}
-                        preload="auto"
+                        preload="metadata"
                         muted>
             <source src={avatar} type="video/mp4" />
           </motion.video>
@@ -63,18 +63,19 @@ export const UserCard = React.forwardRef(({
                       custom={secondary}>
             <img src={avatar} alt="user photo" className={styles.avatar_image} />
           </motion.div>}
-        <motion.div className={styles.card__info} variants={infoVariants} custom={secondary}>
-          <h2 className={styles.heading}>{name}</h2>
-          <h3 className={styles.card__job}>{job}</h3>
-          <ul className={styles.stack}>
-            {/* Ой как щас буду использовать индекс в key ода  */}
-            {stack.map((el, i) => (
-              <li className={styles.stack__item} key={i}>{el}</li>
-            ))}
-          </ul>
-          <p className={styles.card__description}>
-            {description}
-          </p>
+        <motion.div className={styles.card__info} variants={infoVariants} custom={{secondary, isVideo}}>
+          <div className={styles.card__user}><h2 className={styles.heading}>{name}</h2>
+            <h3 className={styles.card__job}>{job}</h3>
+            <ul className={styles.stack}>
+              {/* Ой как щас буду использовать индекс в key ода  */}
+              {stack.map((el, i) => (
+                <li className={styles.stack__item} key={i}>{el}</li>
+              ))}
+            </ul>
+          </div>
+            <p className={styles.card__description}>
+              {description}
+            </p>
           <motion.ul className={styles.links} variants={linksVariants} custom={secondary}
                      animate={listAnimationControls}>
             <li className={styles.links__item}><a href={discord}><img alt="discord" src={discordImage} /></a></li>

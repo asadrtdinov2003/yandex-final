@@ -140,21 +140,10 @@ $avatar-size: 200px;
   }
 }
 
-.card__outer:not(.card_secondary) {
-  z-index: 1;
-}
-
-.card__outer:last-child {
-  margin-left: -2%;
-}
-
-.card__outer:first-child {
-  margin-right: -2%;
-}
-
 .card_secondary {
   filter: brightness(75%);
   width: 340px;
   height: 560px;
   cursor: pointer;
+  overflow: hidden;
 }

@@ -38,11 +38,14 @@ export const UserCard = React.forwardRef(({
       onClick && onClick(e);
     }}
                 onHoverStart={async () => {
-                  await listAnimationControls.start('hover');
                   avatarImgRef?.current?.play();
+                  listAnimationControls.start("hover");
                 }} onHoverEnd={async () => {
-      await listAnimationControls.start('fade');
-      avatarImgRef?.current?.pause();
+      if (avatarImgRef && avatarImgRef.current) {
+        avatarImgRef.current.pause();
+        avatarImgRef.current.currentTime = 0;
+      }
+      listAnimationControls.start("fade");
     }}
                 ref={ref}>
       <motion.div className={styles.card}>
@@ -72,7 +75,8 @@ export const UserCard = React.forwardRef(({
           <p className={styles.card__description}>
             {description}
           </p>
-          <motion.ul className={styles.links} variants={linksVariants} custom={secondary} animate={listAnimationControls}>
+          <motion.ul className={styles.links} variants={linksVariants} custom={secondary}
+                     animate={listAnimationControls}>
             <li className={styles.links__item}><a href={discord}><img alt="discord" src={discordImage} /></a></li>
             <li className={styles.links__item}><a href={telegram}><img alt="telegram" src={telegramImage} /></a></li>
             <li className={styles.links__item}><a href={github}><img alt="github" src={githubImage} /></a></li>

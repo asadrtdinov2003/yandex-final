@@ -6,6 +6,7 @@ import bgImage from "../../imgs/card-bg.png";
 import bgImage2 from "../../imgs/bg2.jpg";
 import avatarImage from "../../imgs/avatarPlaceholder1.png";
 import avatarImage2 from "../../imgs/avatar2.png";
+import avatarVideo from "../../imgs/ExampleVideo.mp4";
 import {MUserCard} from "../../components/UserCard/UserCard";
 
 const users = [
@@ -25,7 +26,7 @@ const users = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     background: bgImage2,
-    avatar: avatarImage2
+    avatar: avatarVideo
   },
   {
     name: "Роман",
@@ -45,7 +46,7 @@ const users = [
     background: bgImage2,
     avatar: avatarImage
   }
-];
+].map(user => ({...user, discord: 'https://discord.com/', telegram: 'https://telegram.com', github: 'https://github.com'}));
 
 function TeamsPage() {
   const [curUserIndex, setCurUserIndex] = useState(1);

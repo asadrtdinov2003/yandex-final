@@ -10,7 +10,7 @@ import {
   bgImageVariants,
   cardVariants,
   infoVariants,
-  linksVariants,
+  linksVariants
 } from "./variants";
 import discordImage from "../../imgs/Discord.svg";
 import telegramImage from "../../imgs/Telegram.svg";
@@ -18,7 +18,20 @@ import githubImage from "../../imgs/GitHub.svg";
 
 export const UserCard = React.forwardRef(
   (
-    { name, avatar, background, job, stack, description, discord, github, telegram, onClick, secondary = false },
+    {
+      name,
+      avatar,
+      background,
+      job,
+      stack,
+      description,
+      discord,
+      github,
+      telegram,
+      onClick,
+      secondary = false,
+      oneCard = false
+    },
     ref
   ) => {
     const avatarImgRef = useRef(null);
@@ -32,7 +45,15 @@ export const UserCard = React.forwardRef(
         whileTap="hover"
         initial="initial"
         whileHover="hover"
-        custom={{ isVideo, secondary }}
+        whileInView={oneCard && "hover"}
+        onViewportEnter={() => {
+          if (oneCard) {
+            console.log('he');
+            isVideo && avatarImgRef.current.play();
+            listAnimationControls.start("hover");
+          }
+        }}
+        custom={{ isVideo, secondary, oneCard }}
         className={cn(styles.card__outer, { [styles.card_secondary]: secondary })}
         onClick={(e) => {
           onClick && onClick(e);
@@ -123,5 +144,5 @@ export const UserCard = React.forwardRef(
 
 export const MUserCard = motion(UserCard);
 MUserCard.defaultProps = {
-  whileTap: { scale: 0.95 },
+  whileTap: { scale: 0.95 }
 };

@@ -1,39 +1,133 @@
 .container {
-  font-family: 'Montserrat', sans-serif;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 auto;
+  margin-top: 75px;
+  padding: 0 35px;
 }
 
 .title {
-  color: #DB4350;
-  font-size: 4vw;
-  text-align: center;
   font-weight: 900;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  font-size: 80px;
+  color: #db4350;
+  text-align: center;
 }
 
 .cards {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-auto-flow: dense;
-  grid-column-gap: 2rem;
-  grid-row-gap: 1rem;
+  grid-template-columns: repeat(6, calc(100% / 6));
+}
+
+.card:nth-child(5n + 1) {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.card:nth-child(5n + 2) {
+  grid-column-start: 4;
+  grid-column-end: 7;
+}
+
+.card:nth-child(5n + 3) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.card:nth-child(5n + 4) {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+.card:nth-child(5n + 5) {
+  grid-column-start: 5;
+  grid-column-end: 7;
+}
+
+.card:nth-child(3n + 1) > div {
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.card:nth-child(3n + 2) > div {
+  background-color: #3ea37e;
+  color: #fff;
+}
+
+.card:nth-child(3n + 3) > div {
+  background-color: #db4350;
+  color: #fff;
 }
 
 .bottom_btn {
-  border: solid #DB4350 0.3vw;
-  border-radius: 1.3vw;
-  background: none;
-  font-size: 3vw;
+  font-size: 30px;
+  padding: 11px 43px;
+  border-radius: 20px;
+  text-transform: lowercase;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 3px solid #db4350;
   display: block;
-  margin: 5% auto 0;
-  padding: 0.5% 3%;
+  margin: 50px auto;
 }
 
 .bottom_btn:hover {
   cursor: pointer;
 }
 
+.bottom_btn:hover {
+  background-color: #DB4350;
+  color: #fff;
+}
 
+@media screen and (max-width: 1500px) {
+  .cards {
+    grid-template-columns: repeat(2, calc(100% / 2));
+  }
+
+  .card:nth-child(3n + 1) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .card:nth-child(3n + 2) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .card:nth-child(3n + 3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .title {
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cards {
+    display: block;
+  }
+
+  .bottom_btn {
+    font-size: 25px;
+    margin: 25px auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 42px;
+  }
+
+  .bottom_btn {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 0 10px;
+  }
+}

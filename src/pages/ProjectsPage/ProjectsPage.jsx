@@ -15,22 +15,21 @@ const fakeData = {
 
 function ProjectsPage() {
   return (
-      <main>
-        <div className={s.container}>
-          <h1 className={s.title}>НАШИ ПРОЕКТЫ</h1>
-          <div className={s.cards}>
-            <ProjectCard props={fakeData}/>
-            <ProjectCard props={fakeData}/>
-            <ProjectCard props={fakeData}/>
-            <ProjectCard props={fakeData}/>
-            <ProjectCard props={fakeData}/>
-            <ProjectCard props={fakeData}/>
-            <ProjectCard props={fakeData}/>
-            <ProjectCard props={fakeData}/>
-          </div>
-          <button className={s.bottom_btn}>загрузить еще</button>
+    <main>
+      <div className={s.container}>
+        <h1 className={s.title}>НАШИ ПРОЕКТЫ</h1>
+        <div className={s.cards}>
+          <ProjectCard className={s.card} props={fakeData} />
+          <ProjectCard className={s.card} props={fakeData} />
+          <ProjectCard className={s.card} props={fakeData} />
+          <ProjectCard className={s.card} props={fakeData} />
+          <ProjectCard className={s.card} props={fakeData} />
+          <ProjectCard className={s.card} props={fakeData} />
+          <ProjectCard className={s.card} props={fakeData} />
         </div>
-      </main>
+        <button className={s.bottom_btn}>загрузить еще</button>
+      </div>
+    </main>
   );
 }
 

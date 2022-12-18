@@ -80,6 +80,10 @@
     .mainSection__img {
         display: none;
     }
+
+    .text {
+        font-size: 24px;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -89,6 +93,10 @@
 
     .button {
         font-size: 30px;
+    }
+
+    .text {
+        font-size: 18px;
     }
 }
 
@@ -102,10 +110,10 @@
     }
 
     .text {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .button {
-        font-size: 20px;
+        font-size: 16px;
     }
 }

@@ -1,20 +1,23 @@
-import React from "react";
-import classnames from "classnames";
+import React, { useContext } from "react";
+import cn from "classnames";
 import Reviews from "../../components/Reviews/Reviews";
 import Accordion from "../../components/Accordion/Accordion";
 import styles from "./styles.module.css";
+import { ThemeContext } from "../../Contexts/ThemeContext";
 
 function MainPage() {
+  const { darkMode } = useContext(ThemeContext);
+
   return (
-    <main className={styles.main}>
-      <section className={classnames(styles.mainSection, styles.section)}>
+    <main className={cn(styles.main, {[styles.background_dark]: darkMode})}>
+      <section className={cn(styles.mainSection, styles.section)}>
         <div className={styles.mainSection__body}>
-          <h1 className={styles.title}>WEB - студия веб-разработки</h1>
-          <p className={styles.text}>
+          <h1 className={cn(styles.title, {[styles.heading_dark]: darkMode})}>WEB - студия веб-разработки</h1>
+          <p className={cn(styles.text, {[styles.paragraph_dark]: darkMode})}>
             Не следует, однако забывать, что дальнейшее развитие различных форм деятельности влечет за собой процесс
             внедрения и модернизации новых предложений.
           </p>
-          <button className={classnames(styles.button, styles.button_red, styles.mainSection__button)} type="button">
+          <button className={cn(styles.button, styles.button_red, styles.mainSection__button)} type="button">
             Связаться с нами
           </button>
         </div>
@@ -23,7 +26,7 @@ function MainPage() {
         </div>
       </section>
       <section className={styles.section}>
-        <h2 className={classnames(styles.title, styles.title_upper)}>О нас</h2>
+        <h2 className={cn(styles.title, styles.title_upper)}>О нас</h2>
         <p className={styles.text}>
           Равным образом дальнейшее развитие различных форм деятельности требуют от нас анализа позиций, занимаемых
           участниками в отношении поставленных задач. Не следует, однако забывать, что рамки и место обучения кадров
@@ -33,11 +36,11 @@ function MainPage() {
         </p>
       </section>
       <section className={styles.section}>
-        <h2 className={classnames(styles.title, styles.title_upper)}>Отзывы</h2>
+        <h2 className={cn(styles.title, styles.title_upper)}>Отзывы</h2>
         <Reviews />
       </section>
       <section className={styles.section}>
-        <h2 className={classnames(styles.title, styles.title_upper)}>FAQ</h2>
+        <h2 className={cn(styles.title, styles.title_upper)}>FAQ</h2>
         <Accordion />
       </section>
     </main>

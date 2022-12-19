@@ -1,10 +1,17 @@
-import React from "react";
-import styles from "./styles.module.css";
+import React, { useContext, useEffect } from 'react';
+import styles from './styles.module.css';
+import { ThemeContext } from '../../Contexts/ThemeContext';
 
 function Toggle() {
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
+  const handleThemeSwitch = () => {
+    setDarkMode((prevState) => !prevState);
+    localStorage.setItem('darkMode', !darkMode);
+  };
+
   return (
     <div className={styles.toggle}>
-      <input className={styles.toggle__input} type="checkbox" />
+      <input className={styles.toggle__input} type="checkbox" onClick={handleThemeSwitch}/>
       <span className={styles.toggle__label}>
         <div className={styles.toggle__check} />
       </span>

@@ -1,0 +1,118 @@
+.popup {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 2;
+    top: 0;
+}
+
+.active {
+    display: flex;
+}
+
+.popup__form {
+    min-width: 500px;
+    max-width: 500px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    position: fixed;
+    z-index: 2;
+}
+
+.popup__input, .popup__message {
+    margin: 7px 0;
+    border: 2px solid #3EA37E;
+    border-radius: 20px;
+    padding: 15px 20px;
+    font-size: 20px;
+    color: #000;
+}
+
+.popup__message {
+    min-width: calc(100% - 44px);
+    max-width: calc(100% - 44px);
+    min-height: 200px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox__input {
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    cursor: pointer;
+}
+
+.checkbox__info {
+    margin-left: 20px;
+    font-weight: 400;
+}
+
+.button {
+    min-width: 200px;
+    max-width: 200px;
+    padding: 10px 0;
+    border-radius: 15px;
+    font-size: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 auto;
+    text-transform: lowercase;
+}
+
+.button_red {
+    border: 3px solid #DB4350;
+}
+
+.button_red:hover {
+    background-color: #DB4350;
+    color: #fff;
+}
+
+.popup__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: -15px;
+}
+
+.popup__title {
+    text-transform: uppercase;
+    color: #DB4350;
+    font-size: 30px;
+}
+
+.cross {
+    background-color: #DB4350;
+    border: none;
+    border-radius: 50%;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cross__img {
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+}

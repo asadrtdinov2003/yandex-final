@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classnames from "classnames";
 import Reviews from "../../components/Reviews/Reviews";
 import Popup from "../../components/Popup/Popup";
+import Accordion from "../../components/Accordion/Accordion";
 import styles from "./styles.module.css";
 
 function MainPage() {
@@ -46,7 +47,7 @@ function MainPage() {
         </section>
         <section className={styles.section}>
           <h2 className={classnames(styles.title, styles.title_upper)}>FAQ</h2>
-          <Reviews />
+          <Accordion />
         </section>
       </main>
     </>

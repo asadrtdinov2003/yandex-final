@@ -188,7 +188,7 @@
  DARK THEME
 **/
 
-.text_dark {
+.tab_dark, .text_dark {
   color: #fff;
   background-color: #2C2A4A;
 }
@@ -197,7 +197,26 @@
   display: none;
 }
 
+.tab_dark:hover {
+  background-color: #907AD6;
+}
+
 .header_dark {
   background-image: url(../../../public/lines_dark.svg);
   background-color: #DABFFF;
+}
+
+.burger_dark {
+  background-color: #2C2A4A;
+}
+
+.burger_dark:active {
+  background-color: #907AD6;
+}
+
+@media screen and (max-width: 1100px) {
+  .nav {
+    background-color: #2C2A4A;
+    border-color: #DABFFF;
+  }
 }

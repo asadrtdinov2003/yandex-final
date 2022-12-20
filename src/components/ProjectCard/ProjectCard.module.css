@@ -115,3 +115,19 @@
     font-size: 10px;
   }
 }
+
+/**
+  DARK THEME
+**/
+
+.title_dark {
+  color: #fff;
+}
+
+.description_dark {
+  color: #DABFFF;
+}
+
+.tag_dark {
+  background-color: #907AD6;
+}

@@ -2,7 +2,7 @@
 import React from "react";
 import s from "./ProjectCard.module.css";
 import img_placeholder from "../../imgs/SM-placeholder.png";
-import classnames from "classnames";
+import cn from "classnames";
 
 function ProjectCard({ props, className }) {
   const tags = props.tags.map((item) => {
@@ -14,7 +14,7 @@ function ProjectCard({ props, className }) {
   });
 
   return (
-    <div className={classnames(s.project_card, className)}>
+    <div className={cn(s.project_card, className)}>
       <img src={img_placeholder} className={s.imgs} alt="img" width="100%" />
       <div className={s.discr}>
         <div className={s.date_and_tags}>

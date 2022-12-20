@@ -1,7 +1,9 @@
 /* eslint-disable */
-import React from "react";
+import React, { useContext } from "react";
 import s from "./ProjectsPage.module.css";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import cn from 'classnames';
+import { ThemeContext } from "../../Contexts/ThemeContext";
 
 const fakeData = {
   name: "Название проекта 1",
@@ -14,20 +16,21 @@ const fakeData = {
 };
 
 function ProjectsPage() {
+  const {darkMode} = useContext(ThemeContext);
+
   return (
-    <main>
+    <main className={cn(s.page, {[s.page_dark]: darkMode})}>
       <div className={s.container}>
-        <h1 className={s.title}>НАШИ ПРОЕКТЫ</h1>
+        <h1 className={cn(s.title, {[s.title_dark]: darkMode})}>НАШИ ПРОЕКТЫ</h1>
         <div className={s.cards}>
-          <ProjectCard className={s.card} props={fakeData} />
-          <ProjectCard className={s.card} props={fakeData} />
-          <ProjectCard className={s.card} props={fakeData} />
-          <ProjectCard className={s.card} props={fakeData} />
-          <ProjectCard className={s.card} props={fakeData} />
-          <ProjectCard className={s.card} props={fakeData} />
-          <ProjectCard className={s.card} props={fakeData} />
+          <ProjectCard className={cn(s.card, {[s.card_dark]: darkMode})} props={fakeData} />
+          <ProjectCard className={cn(s.card, {[s.card_dark]: darkMode})} props={fakeData} />
+          <ProjectCard className={cn(s.card, {[s.card_dark]: darkMode})} props={fakeData} />
+          <ProjectCard className={cn(s.card, {[s.card_dark]: darkMode})} props={fakeData} />
+          <ProjectCard className={cn(s.card, {[s.card_dark]: darkMode})} props={fakeData} />
+          <ProjectCard className={cn(s.card, {[s.card_dark]: darkMode})} props={fakeData} />
         </div>
-        <button className={s.bottom_btn}>загрузить еще</button>
+        <button className={cn(s.bottom_btn, {[s.bottom_btn_dark]: darkMode})}>загрузить еще</button>
       </div>
     </main>
   );

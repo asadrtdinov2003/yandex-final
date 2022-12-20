@@ -18,13 +18,13 @@ function Header() {
         </NavLink>
         <nav className={cn(styles.nav, active ? styles.active : '')}>
           <ul className={styles.nav__body}>
-            <NavLink to="teams" className={cn(styles.nav__item, styles.tab, styles.tab_green)}>
+            <NavLink to="teams" className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.text_dark]: darkMode})}>
               Наша команда
             </NavLink>
-            <NavLink to="projects" className={cn(styles.nav__item, styles.tab, styles.tab_green)}>
+            <NavLink to="projects" className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.text_dark]: darkMode})}>
               Проекты
             </NavLink>
-            <li className={cn(styles.nav__item, styles.tab, styles.tab_green)}>Связаться с нами</li>
+            <li className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.text_dark]: darkMode})}>Связаться с нами</li>
           </ul>
         </nav>
         <div className={styles.flex}>

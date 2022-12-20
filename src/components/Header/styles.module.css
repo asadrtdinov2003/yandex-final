@@ -24,8 +24,6 @@
   color: #000000;
   font-size: 44px;
   font-weight: 900;
-  min-width: 105px;
-  max-width: 105px;
   min-height: 50px;
   max-height: 50px;
 }
@@ -192,6 +190,11 @@
 
 .text_dark {
   color: #fff;
+  background-color: #2C2A4A;
+}
+
+.text_dark::after {
+  display: none;
 }
 
 .header_dark {

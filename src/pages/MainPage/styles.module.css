@@ -36,6 +36,10 @@
     background-size: cover;
 }
 
+.mainSection__img_no_hat::after {
+  display: none;
+}
+
 .title {
     font-weight: 900;
     font-size: 80px;
@@ -119,7 +123,7 @@
 }
 
 .background_dark {
-  background-color: #282c34;
+  background-color: #2C2A4A;
 }
 
 .heading_dark {
@@ -127,5 +131,16 @@
 }
 
 .paragraph_dark {
-  color: #282c34;
+  color: #907AD6;
+}
+
+.button_dark {
+  background: transparent;
+  border: 3px solid #DABFFF;
+  color: #fff;
+}
+
+.button_dark:hover {
+  background: #DABFFF;
+  color: #000;
 }

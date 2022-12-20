@@ -185,3 +185,16 @@
     padding: 8px 5px;
   }
 }
+
+/**
+ DARK THEME
+**/
+
+.text_dark {
+  color: #fff;
+}
+
+.header_dark {
+  background-image: url(../../../public/lines_dark.svg);
+  background-color: #DABFFF;
+}

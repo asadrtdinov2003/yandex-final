@@ -1,15 +1,13 @@
 .main {
-    padding: 0 130px;
+    padding: 3% 130px 5% 130px;
 }
 
 .section {
-    margin: 200px 0;
 }
 
 .mainSection {
     display: flex;
     align-items: flex-end;
-    margin-top: 100px;
 }
 
 .mainSection__button {

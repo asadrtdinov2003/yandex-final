@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import classnames from "classnames";
 import { NavLink } from "react-router-dom";
@@ -22,7 +23,6 @@ function Header() {
             <NavLink to="projects" className={classnames(styles.nav__item, styles.tab, styles.tab_green)}>
               Проекты
             </NavLink>
-            <li className={classnames(styles.nav__item, styles.tab, styles.tab_green)}>Связаться с нами</li>
           </ul>
         </nav>
         <div className={styles.flex}>

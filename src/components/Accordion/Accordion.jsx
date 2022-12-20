@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./styles.module.css";
+import cn from 'classnames';
+import { ThemeContext } from "../../Contexts/ThemeContext";
 
 function Accordion() {
+  const {darkMode} = useContext(ThemeContext);
+
   const items = [
     {
       id: "hskdufh3ue-12wsj",
@@ -20,12 +24,12 @@ function Accordion() {
     },
   ];
   return (
-    <ul className={styles.accordion}>
+    <ul className={cn(styles.accordion, {[styles.accordion_dark]: darkMode})}>
       {items.map((item) => (
-        <li key={item.id} className={styles.accordion__item}>
+        <li key={item.id} className={cn(styles.accordion__item, {[styles.accordion__item_dark]: darkMode})}>
           <input className={styles.accordion__input} type="checkbox" defaultChecked="true" />
           <h2 className={styles.accordion__title}>{item.title}</h2>
-          <i className={styles.icon} />
+          <i className={cn(styles.icon, {[styles.icon_dark]: darkMode})} />
           <p className={styles.accordion__text}>{item.text}</p>
         </li>
       ))}

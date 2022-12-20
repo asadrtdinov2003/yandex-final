@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import styles from './styles.module.css';
 import { ThemeContext } from '../../Contexts/ThemeContext';
+import cn from "classnames";
 
 function Toggle() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
@@ -12,7 +13,7 @@ function Toggle() {
   return (
     <div className={styles.toggle}>
       <input className={styles.toggle__input} type="checkbox" onChange={handleThemeSwitch} checked={darkMode}/>
-      <span className={styles.toggle__label}>
+      <span className={cn(styles.toggle__label, {[styles.toggle__label_dark]: darkMode})}>
         <div className={styles.toggle__check} />
       </span>
     </div>

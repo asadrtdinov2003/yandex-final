@@ -18,18 +18,18 @@ function Header() {
         </NavLink>
         <nav className={cn(styles.nav, active ? styles.active : '')}>
           <ul className={styles.nav__body}>
-            <NavLink to="teams" className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.text_dark]: darkMode})}>
+            <NavLink to="teams" className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.tab_dark]: darkMode})}>
               Наша команда
             </NavLink>
-            <NavLink to="projects" className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.text_dark]: darkMode})}>
+            <NavLink to="projects" className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.tab_dark]: darkMode})}>
               Проекты
             </NavLink>
-            <li className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.text_dark]: darkMode})}>Связаться с нами</li>
+            <li className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.tab_dark]: darkMode})}>Связаться с нами</li>
           </ul>
         </nav>
         <div className={styles.flex}>
           <Toggle />
-          <button type="button" className={styles.burger} onClick={() => setActive((active + 1) % 2)}>
+          <button type="button" className={cn(styles.burger, {[styles.burger_dark]: darkMode})} onClick={() => setActive((active + 1) % 2)}>
             <div className={cn(styles.burger__body, active ? styles.checked : '')}>
               <div className={styles.burger__item} />
               <div className={styles.burger__item} />

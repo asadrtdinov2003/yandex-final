@@ -90,7 +90,7 @@
 
 @media screen and (max-width: 800px) {
     .main {
-        padding: 0 70px;
+        padding: 3% 70px 5% 70px;
     }
 
     .button {
@@ -104,7 +104,7 @@
 
 @media screen and (max-width: 500px) {
     .main {
-        padding: 0 40px;
+        padding: 3% 40px 5% 40px;
     }
 
     .title {

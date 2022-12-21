@@ -5,12 +5,17 @@ import Accordion from "../../components/Accordion/Accordion";
 import styles from "./styles.module.css";
 import { ThemeContext } from "../../Contexts/ThemeContext";
 import darkPcImage from "../../imgs/dark_pc.png";
+import {motion} from "framer-motion";
 
 function MainPage() {
   const { darkMode } = useContext(ThemeContext);
 
   return (
-    <main className={cn(styles.main, {[styles.background_dark]: darkMode})}>
+    <motion.main className={cn(styles.main, {[styles.background_dark]: darkMode})}
+                 initial={{ opacity: 0 }}
+                 animate={{ opacity: 1 }}
+                 exit={{ opacity: 0 }}
+                 transition={{ duration: 0.1 }}>
       <section className={cn(styles.mainSection, styles.section)}>
         <div className={styles.mainSection__body}>
           <h1 className={cn(styles.title, {[styles.heading_dark]: darkMode})}>WEB - студия веб-разработки</h1>
@@ -18,7 +23,7 @@ function MainPage() {
             Не следует, однако забывать, что дальнейшее развитие различных форм деятельности влечет за собой процесс
             внедрения и модернизации новых предложений.
           </p>
-          <button className={cn(styles.button, darkMode ? styles.button_dark : styles.button_red, styles.mainSection__button)} type="button">
+          <button className={cn(styles.button, darkMode ? styles.button_dark : styles.button_red, styles.mainSection__button)} type="button" >
             Связаться с нами
           </button>
         </div>
@@ -44,7 +49,7 @@ function MainPage() {
         <h2 className={cn(styles.title, styles.title_upper, {[styles.heading_dark]: darkMode})}>FAQ</h2>
         <Accordion />
       </section>
-    </main>
+    </motion.main>
   );
 }
 

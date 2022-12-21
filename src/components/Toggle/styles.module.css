@@ -90,3 +90,7 @@
   background-size: cover;
   background-position: center;
 }
+
+.toggle__label_dark {
+  background: #907AD6;
+}

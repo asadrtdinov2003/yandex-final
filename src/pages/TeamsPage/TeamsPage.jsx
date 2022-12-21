@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AnimatePresence, useAnimationControls } from "framer-motion";
 import styles from "./TeamsPage.module.css";
 import bgImage from "../../imgs/card-bg.png";
@@ -12,6 +12,8 @@ import leftArrow from "../../imgs/left-arrow.svg";
 import rightArrow from "../../imgs/right-arrow.svg";
 import { MUserCard } from "../../components/UserCard/UserCard";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { ThemeContext } from "../../Contexts/ThemeContext";
+import cn from 'classnames';
 
 const usersData = [
   {
@@ -96,13 +98,14 @@ function shift(arr, direction) {
 }
 
 function TeamsPage() {
+  const {darkMode} = useContext(ThemeContext);
   const [users, setUsers] = useState(usersData);
   const { width } = useWindowDimensions();
   const cardAnimationControls = useAnimationControls();
 
   if (width < 1200) {
     return (
-      <main className={styles.page}>
+      <main className={cn(styles.page, {[styles.page_dark]: darkMode})}>
         <div className={styles.cards}>
           <AnimatePresence mode="wait">
             <MUserCard
@@ -130,7 +133,7 @@ function TeamsPage() {
   }
 
   return (
-    <main className={styles.page}>
+    <main className={cn(styles.page, {[styles.page_dark]: darkMode})}>
       <div className={styles.cards}>
         <AnimatePresence mode="popLayout">
           {users.map((el, index) => {

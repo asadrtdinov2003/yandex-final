@@ -29,3 +29,16 @@
         margin: 8px 0;
     }
 }
+
+/**
+  DARK THEME
+**/
+
+.footer_dark {
+  background-color: #DABFFF;
+}
+
+.text_dark {
+  color: #000;
+}
+

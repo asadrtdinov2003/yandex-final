@@ -1,0 +1,119 @@
+.main {
+    padding: 0 130px;
+}
+
+.section {
+    margin: 200px 0;
+}
+
+.mainSection {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 100px;
+}
+
+.mainSection__button {
+    margin-top: 40px;
+}
+
+.mainSection__img {
+    min-height: 301px;
+    max-height: 301px;
+}
+
+.mainSection__img::after {
+    position: relative;
+    top: -400px;
+    left: 250px;
+    z-index: 1;
+    content: "";
+    display: block;
+    min-width: 240px;
+    max-width: 240px;
+    min-height: 240px;
+    max-height: 240px;
+    background: url(../../../public/hat_large.png);
+    background-size: cover;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 80px;
+    color: #DB4350;
+}
+
+.title_upper {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.text {
+    font-size: 28px;
+}
+
+.button {
+    font-size: 40px;
+    padding: 11px 43px;
+    border-radius: 20px;
+    text-transform: lowercase;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button_red {
+    border: 3px solid #DB4350;
+}
+
+.button_red:hover {
+    background-color: #DB4350;
+    color: #fff;
+}
+
+@media screen and (max-width: 1400px) {
+    .title {
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .mainSection__img {
+        display: none;
+    }
+
+    .text {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main {
+        padding: 0 70px;
+    }
+
+    .button {
+        font-size: 30px;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        padding: 0 40px;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .button {
+        font-size: 16px;
+    }
+}

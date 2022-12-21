@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import cn from "classnames";
 import { motion, useAnimationControls } from "framer-motion";
-import styles from "./UserCard.module.scss";
+import styles from "./UserCard.module.css";
 import {
   avatarImageVariants,
   avatarVideoVariants,

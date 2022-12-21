@@ -1,14 +1,17 @@
 /* eslint-disable */
-import React from 'react';
-import classnames from 'classnames';
+import React, { useContext } from "react";
+import cn from 'classnames';
 import styles from './styles.module.css';
+import { ThemeContext } from "../../Contexts/ThemeContext";
 
 function Popup({ active, func }) {
+  const {darkMode} = useContext(ThemeContext);
+
   return (
-    <div className={classnames(styles.popup, active ? styles.active : "")}>
+    <div className={cn(styles.popup, active ? styles.active : "")}>
       <form
         name="form"
-        className={styles.popup__form}
+        className={cn(styles.popup__form, {[styles.popup__form_dark]: darkMode})}
         onSubmit={(event) => {
           event.preventDefault();
           let form = document.forms["form"];
@@ -33,15 +36,15 @@ function Popup({ active, func }) {
             <img className={styles.cross__img} src="cross.svg" alt="Крестик" />
           </button>
         </div>
-        <input type="text" id="name" className={styles.popup__input} placeholder="Имя" required />
-        <input type="email" id="email" className={styles.popup__input} placeholder="E-mail" required />
-        <input type="text" id={"theme"} className={styles.popup__input} placeholder="Тема" required />
-        <textarea id="message" className={styles.popup__message} placeholder="Сообщение" required />
+        <input type="text" id="name" className={cn(styles.popup__input, {[styles.popup__input_dark]: darkMode})} placeholder="Имя" required />
+        <input type="email" id="email" className={cn(styles.popup__input, {[styles.popup__input_dark]: darkMode})} placeholder="E-mail" required />
+        <input type="text" id={"theme"} className={cn(styles.popup__input, {[styles.popup__input_dark]: darkMode})} placeholder="Тема" required />
+        <textarea id="message" className={cn(styles.popup__message, {[styles.popup__message_dark]: darkMode})} placeholder="Сообщение" required />
         <div className={styles.checkbox}>
           <input type="checkbox" className={styles.checkbox__input} required />
           <h4 className={styles.checkbox__info}>Даю согласие, на обработку персональных данных</h4>
         </div>
-        <input type="submit" className={classnames(styles.button, styles.button_red)} value="Отправить" />
+        <input type="submit" className={cn(styles.button, styles.button_red, {[styles.button_dark]: darkMode})} value="Отправить" />
       </form>
     </div>
   );

@@ -5,8 +5,8 @@ import Accordion from "../../components/Accordion/Accordion";
 import styles from "./styles.module.css";
 import { ThemeContext } from "../../Contexts/ThemeContext";
 import darkPcImage from "../../imgs/dark_pc.png";
-import OurMap from "../../components/OurMap/OurMap";
 import Popup from "../../components/Popup/Popup";
+import OurMap from "../../components/OurMap/OurMap";
 
 function MainPage() {
   const { darkMode } = useContext(ThemeContext);
@@ -36,7 +36,7 @@ function MainPage() {
             </button>
           </div>
           <div className={cn(styles.mainSection__img, { [styles.mainSection__img_no_hat]: darkMode })}>
-            <img src={darkMode ? darkPcImage : "computer.png"} alt="Ноутбук" />
+            <img src={darkMode ? darkPcImage : "computer.png"} loading='lazy' alt="Ноутбук" />
           </div>
         </section>
         <section className={styles.section}>

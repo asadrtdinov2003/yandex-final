@@ -16,7 +16,7 @@ function ProjectsPage() {
         <h1 className={cn(s.title, { [s.title_dark]: darkMode })}>НАШИ ПРОЕКТЫ</h1>
         <div className={s.cards}>
           {projects.slice(0, visible).map((data) => (
-            <ProjectCard className={cn(s.card, { [s.card_dark]: darkMode })} props={data} />
+            <ProjectCard className={cn(s.card, { [s.card_dark]: darkMode })} props={data} key={data.name}/>
           ))}
         </div>
         {projects.length >= visible && (

@@ -38,7 +38,6 @@
 
 .popup__input:invalid, .popup__message:invalid {
   border-color: #ff0000;
-
 }
 
 .popup__message {
@@ -132,4 +131,37 @@
   .popup__title {
     font-size: 20px;
   }
+}
+
+/**
+  DARK THEME
+**/
+
+.popup__form_dark {
+  background-color: #2C2A4A;
+  color: #fff;
+}
+
+.text_dark {
+  color: #fff;
+}
+
+.popup__input_dark, .popup__message_dark {
+  border: 2px solid #907AD6;
+}
+
+.popup__input_dark:invalid, .popup__message_dark:invalid {
+  border: 2px solid #900f45;
+}
+
+.popup__input_dark:focus-visible, .popup__message_dark:focus-visible {
+  border: 2px solid #900f45;
+}
+
+.button_dark {
+  border: 3px solid #907AD6;
+}
+
+.button_dark:hover {
+  background-color: #907AD6;
 }

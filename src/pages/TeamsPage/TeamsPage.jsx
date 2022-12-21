@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import React, { useContext, useState } from "react";
-import { AnimatePresence, useAnimationControls } from "framer-motion";
+import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import styles from "./TeamsPage.module.css";
 import bgImage from "../../imgs/card-bg.png";
 import bgImage2 from "../../imgs/bg2.jpg";
@@ -13,7 +13,7 @@ import rightArrow from "../../imgs/right-arrow.svg";
 import { MUserCard } from "../../components/UserCard/UserCard";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { ThemeContext } from "../../Contexts/ThemeContext";
-import cn from 'classnames';
+import cn from "classnames";
 
 const usersData = [
   {
@@ -23,7 +23,7 @@ const usersData = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ",
     background: bgImage,
-    avatar: avatarImage,
+    avatar: avatarImage
   },
   {
     name: "Ковалев Тимур",
@@ -32,7 +32,7 @@ const usersData = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     background: bgImage2,
-    avatar: avatarVideo,
+    avatar: avatarVideo
   },
   {
     name: "Роман",
@@ -41,7 +41,7 @@ const usersData = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     background: bgImage2,
-    avatar: avatarImage2,
+    avatar: avatarImage2
   },
   {
     name: "Роман 2",
@@ -50,35 +50,35 @@ const usersData = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     background: bgImage2,
-    avatar: avatarImage,
-  },
+    avatar: avatarImage
+  }
 ].map((user) => ({
   ...user,
   discord: "https://discord.com/",
   telegram: "https://telegram.com",
-  github: "https://github.com",
+  github: "https://github.com"
 }));
 
 const leftCardVariants = {
   initial: { rotate: -4, marginRight: "-5%", filter: "brightness(75%)", y: "100vh" },
   animate: { y: 0 },
-  whileHover: { y: -25, filter: "brightness(80%)" },
+  whileHover: { y: -25, filter: "brightness(80%)" }
 };
 
 const rightCardVariants = {
   initial: { rotate: 4, marginLeft: "-5%", filter: "brightness(75%)", y: "100vh" },
   animate: { y: 0 },
-  whileHover: { y: -25, filter: "brightness(80%)" },
+  whileHover: { y: -25, filter: "brightness(80%)" }
 };
 
 const middleCardVariants = {
   initial: { zIndex: 1, rotate: 0, marginLeft: 0, marginRight: 0, filter: "brightness(100%)", y: "100vh" },
-  animate: { y: 0, zIndex: 1, rotate: 0, marginLeft: 0, marginRight: 0 },
+  animate: { y: 0, zIndex: 1, rotate: 0, marginLeft: 0, marginRight: 0 }
 };
 
 const oneCard = {
   initial: { zIndex: 1, rotate: 0, marginLeft: 0, marginRight: 0, filter: "brightness(100%)", y: 0, opacity: 0 },
-  animate: { opacity: [0, 1], transition: { duration: 0.2 } },
+  animate: { opacity: [0, 1], transition: { duration: 0.2 } }
 };
 
 function shift(arr, direction) {
@@ -98,14 +98,28 @@ function shift(arr, direction) {
 }
 
 function TeamsPage() {
-  const {darkMode} = useContext(ThemeContext);
+  const { darkMode } = useContext(ThemeContext);
   const [users, setUsers] = useState(usersData);
   const { width } = useWindowDimensions();
   const cardAnimationControls = useAnimationControls();
 
   if (width < 1200) {
     return (
-      <main className={cn(styles.page, {[styles.page_dark]: darkMode})}>
+      <motion.main className={cn(styles.page, { [styles.page_dark]: darkMode })}
+                   initial={{
+                     background: darkMode
+                       ? "radial-gradient(135.39% 135.39% at 50% 50%, #2C2A4A 0%, #2C2A4A 100%)"
+                       : "radial-gradient(135.39% 135.39% at 50% 50%, #FFFFFF 0%, #FFFFFF 100%)",
+                     transition: {duration: 0.1}
+                   }}
+                   animate={{
+                     background: darkMode
+                       ? "radial-gradient(135.39% 135.39% at 50% 50%, #907AD6 0%, #2C2A4A 100%)"
+                       : "radial-gradient(135.39% 135.39% at 50% 50%, #EF233C 0%, rgb(40, 44, 52) 100%)",
+                     transition: {
+                       delay: 1.1
+                     }
+                   }}>
         <div className={styles.cards}>
           <AnimatePresence mode="wait">
             <MUserCard
@@ -128,12 +142,26 @@ function TeamsPage() {
             <img src={rightArrow} alt="next" />
           </button>
         </div>
-      </main>
+      </motion.main>
     );
   }
 
   return (
-    <main className={cn(styles.page, {[styles.page_dark]: darkMode})}>
+    <motion.main className={cn(styles.page, { [styles.page_dark]: darkMode })}
+                 initial={{
+                   background: darkMode
+                     ? "radial-gradient(135.39% 135.39% at 50% 50%, #2C2A4A 0%, #2C2A4A 100%)"
+                     : "radial-gradient(135.39% 135.39% at 50% 50%, #FFFFFF 0%, #FFFFFF 100%)"
+                 }}
+                 animate={{
+                   background: darkMode
+                     ? "radial-gradient(135.39% 135.39% at 50% 50%, #907AD6 0%, #2C2A4A 100%)"
+                     : "radial-gradient(135.39% 135.39% at 50% 50%, #EF233C 0%, rgb(40, 44, 52) 100%)",
+                   transition: {
+                     delay: 1.1
+                   }
+                 }}
+    >
       <div className={styles.cards}>
         <AnimatePresence mode="popLayout">
           {users.map((el, index) => {
@@ -178,7 +206,8 @@ function TeamsPage() {
                   animate="animate"
                   secondary={false}
                   variants={middleCardVariants}
-                  onClick={() => {}}
+                  onClick={() => {
+                  }}
                 />
               );
             }
@@ -186,7 +215,7 @@ function TeamsPage() {
           })}
         </AnimatePresence>
       </div>
-    </main>
+    </motion.main>
   );
 }
 

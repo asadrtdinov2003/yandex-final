@@ -5,7 +5,8 @@
   justify-content: center;
   background: radial-gradient(135.39% 135.39% at 50% 50%, #EF233C 0%, rgb(40, 44, 52) 100%);
   padding: 5% 5% 5% 5%;
-  gap: 4rem
+  gap: 4rem;
+  overflow: hidden;
 }
 
 .cards {

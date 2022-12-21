@@ -115,6 +115,7 @@ function TeamsPage() {
               animate="animate"
               secondary={false}
               variants={oneCard}
+              oneCard={true}
             />
             ;
           </AnimatePresence>

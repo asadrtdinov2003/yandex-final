@@ -1,8 +1,7 @@
 .container {
   font-family: "Montserrat", sans-serif;
   margin: 0 auto;
-  margin-top: 75px;
-  padding: 0 35px;
+  padding: 3% 35px 5% 35px;
 }
 
 .title {
@@ -10,6 +9,7 @@
   font-size: 80px;
   color: #db4350;
   text-align: center;
+  margin: 0;
 }
 
 .cards {
@@ -130,4 +130,45 @@
   .container {
     padding: 0 10px;
   }
+}
+
+/**
+  DARK THEME
+**/
+
+.page_dark {
+  background-color: #2C2A4A;
+}
+
+.title_dark {
+  color: #fff;
+}
+
+
+.card_dark:nth-child(3n + 1) > div {
+  background-color: #907AD6;
+  border: 2px solid #DABFFF;
+  color: #fff;
+}
+
+.card_dark:nth-child(3n + 2) > div {
+  background-color: #2C2A4A;
+  border: 2px solid #fff;
+  color: #DABFFF;
+}
+
+.card_dark:nth-child(3n + 3) > div {
+  background-color: #FFFFFF;
+  border: 2px solid #2C2A4A;
+  color: #000;
+}
+
+.bottom_btn_dark {
+  color: #fff;
+  background-color: transparent;
+  border-color: #DABFFF;
+}
+
+.bottom_btn_dark:hover {
+  background-color: #DABFFF;
 }

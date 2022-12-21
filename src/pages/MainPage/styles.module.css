@@ -1,15 +1,13 @@
 .main {
-    padding: 0 130px;
+    padding: 3% 130px 5% 130px;
 }
 
 .section {
-    margin: 200px 0;
 }
 
 .mainSection {
     display: flex;
     align-items: flex-end;
-    margin-top: 100px;
 }
 
 .mainSection__button {
@@ -34,6 +32,10 @@
     max-height: 240px;
     background: url(../../../public/hat_large.png);
     background-size: cover;
+}
+
+.mainSection__img_no_hat::after {
+  display: none;
 }
 
 .title {
@@ -88,7 +90,7 @@
 
 @media screen and (max-width: 800px) {
     .main {
-        padding: 0 70px;
+        padding: 3% 70px 5% 70px;
     }
 
     .button {
@@ -102,7 +104,7 @@
 
 @media screen and (max-width: 500px) {
     .main {
-        padding: 0 40px;
+        padding: 3% 40px 5% 40px;
     }
 
     .title {
@@ -116,4 +118,27 @@
     .button {
         font-size: 16px;
     }
+}
+
+.background_dark {
+  background-color: #2C2A4A;
+}
+
+.heading_dark {
+  color: #fff;
+}
+
+.paragraph_dark {
+  color: #907AD6;
+}
+
+.button_dark {
+  background: transparent;
+  border: 3px solid #DABFFF;
+  color: #fff;
+}
+
+.button_dark:hover {
+  background: #DABFFF;
+  color: #000;
 }

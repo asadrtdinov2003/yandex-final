@@ -142,3 +142,36 @@
         font-size: 20px;
     }
 }
+
+/**
+  DARK THEME
+**/
+
+.review_dark {
+  background-color: transparent;
+  border: 5px solid #DABFFF;
+}
+
+.heading_dark {
+  color: #fff;
+}
+
+.text_dark {
+  color: #DABFFF;
+}
+
+.sliderNav__button_dark {
+  background-color: #907AD6;
+}
+
+.circleButton_dark {
+  background-color: #907AD6;
+}
+
+.circleButton_dark:hover {
+  background-color: #DABFFF;
+}
+
+.sliderNav__button_dark.active {
+  background-color: #DABFFF;
+}

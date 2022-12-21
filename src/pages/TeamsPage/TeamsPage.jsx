@@ -1,63 +1,15 @@
 /* eslint-disable */
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import styles from "./TeamsPage.module.css";
-import bgImage from "../../imgs/card-bg.png";
-import bgImage2 from "../../imgs/bg2.jpg";
-import avatarImage from "../../imgs/avatarPlaceholder1.png";
-import avatarImage2 from "../../imgs/avatar2.png";
-import avatarVideo from "../../imgs/ExampleVideo.mp4";
 import leftArrow from "../../imgs/left-arrow.svg";
 import rightArrow from "../../imgs/right-arrow.svg";
 import { MUserCard } from "../../components/UserCard/UserCard";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { ThemeContext } from "../../Contexts/ThemeContext";
 import cn from "classnames";
-
-const usersData = [
-  {
-    name: "Тимур Ковалев",
-    job: "Frontend-developer",
-    stack: ["js", "html", "css"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ",
-    background: bgImage,
-    avatar: avatarImage
-  },
-  {
-    name: "Ковалев Тимур",
-    job: "Frontend-developer",
-    stack: ["scss", "react", "c++"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    background: bgImage2,
-    avatar: avatarVideo
-  },
-  {
-    name: "Роман",
-    job: "Frontend-developer",
-    stack: ["c#"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    background: bgImage2,
-    avatar: avatarImage2
-  },
-  {
-    name: "Роман 2",
-    job: "Frontend-developer",
-    stack: ["c#"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    background: bgImage2,
-    avatar: avatarImage
-  }
-].map((user) => ({
-  ...user,
-  discord: "https://discord.com/",
-  telegram: "https://telegram.com",
-  github: "https://github.com"
-}));
+import { LanguageContext } from "../../Contexts/LanguageContext";
 
 const leftCardVariants = {
   initial: { rotate: -4, marginRight: "-5%", filter: "brightness(75%)", y: "100vh" },
@@ -99,9 +51,18 @@ function shift(arr, direction) {
 
 function TeamsPage() {
   const { darkMode } = useContext(ThemeContext);
-  const [users, setUsers] = useState(usersData);
+  const { translation } = useContext(LanguageContext);
+  const [users, setUsers] = useState(translation?.team);
   const { width } = useWindowDimensions();
   const cardAnimationControls = useAnimationControls();
+
+  useEffect(() => {
+    setUsers(translation?.team)
+  }, [translation])
+
+  if (!users) {
+    return null;
+  }
 
   if (width < 1200) {
     return (

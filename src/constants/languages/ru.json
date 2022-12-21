@@ -15,19 +15,19 @@
         {
           "id": "kjha1n17asd7-1na",
           "name": "Иван Андреевич К.",
-          "img": "avatar.png",
+          "img": "avatars/avatar.png",
           "review": "Заказывал создание сайта для своей автомастерской в начале марта. Под конец месяца со мной связались для согласования конечного результата. Сайтом доволен. Сделали быстро и качественно. Рекомендую!"
         },
         {
           "id": "j8ns-3hjd32-djfk",
           "name": "Алексей Кондратьевич Ф.",
-          "img": "avatar.png",
+          "img": "avatars/avatar.png",
           "review": "Обратился к данной веб студии по совету друга, который уже пользовался их услугами. В итоге для меня был разработан современный интернет магазин с интересным дизайном. Сайт облегчил ведение бизнеса, благодаря студии увеличил продажи примерно на 20%."
         },
         {
           "id": "lre45-78dgfj2jfk",
           "name": "Анна Евгеньевна Р.",
-          "img": "avatar.png",
+          "img": "avatars/avatar.png",
           "review": "Сначала посчитала, что ценник слегка завышен, но в конце концов это оказалось лучшим предложением, что я нашла. Спасибо команде за сайт для моей образовательной платформы. Ученики довольны, а значит и я тоже."
         }
       ]
@@ -76,5 +76,68 @@
     "message": "Сообщение",
     "personalData": "Даю согласие, на обработку персональных данных",
     "send": "отправить"
-  }
+  },
+  "team": [
+    {
+      "name": "Тимур Ковалев",
+      "job": "Frontend-developer",
+      "stack": [
+        "js",
+        "html",
+        "css"
+      ],
+      "description": "Профессиональный фронтенд разработчик. Создает потрясающие интерфейсы для веб-приложений.",
+      "background": "backgrounds/card-bg.png",
+      "avatar": "avatars/avatar.png",
+      "discord": "https://discord.com/",
+      "telegram": "https://telegram.com",
+      "github": "https://github.com"
+    },
+    {
+      "name": "Палкин Руслан",
+      "job": "Mobile-developer",
+      "stack": [
+        "scss",
+        "react",
+        "c++"
+      ],
+      "description": "Разработчик программного обеспечения для мобильных устройств. Владеет react native и создает интерфейсы для телефонов.",
+      "background": "backgrounds/card-bg2.jpg",
+      "avatar": "avatars/RusandorAvatar.mp4",
+      "discord": "https://discord.com/",
+      "telegram": "https://telegram.com",
+      "github": "https://github.com"
+    },
+    {
+      "name": "Юрков Владислав",
+      "job": "Backend-developer",
+      "stack": [
+        "c#",
+        "node.js",
+        "express"
+      ],
+      "description": "Разрабатывает серверные части веб-приложений. Предпочитает использовать Node.js с фреймворком Express.js.",
+      "background": "backgrounds/card-bg2.jpg",
+      "avatar": "avatars/avatar2.png",
+      "discord": "https://discord.com/",
+      "telegram": "https://telegram.com",
+      "github": "https://github.com"
+    },
+    {
+      "name": "Комиссаров Семён",
+      "job": "Software Architect",
+      "stack": [
+        "Python",
+        "Ruby",
+        "Go"
+      ],
+      "description": "Занимается архитектурой наших приложений. Так же он проверяет процесс разработки и следит за статусом приложения.",
+      "background": "backgrounds/card-bg.png",
+      "avatar": "avatars/avatar.png",
+      "discord": "https://discord.com/",
+      "telegram": "https://telegram.com",
+      "github": "https://github.com"
+    }
+  ]
+
 }

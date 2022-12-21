@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 
 function Popup({ active, func }) {
   return (
-    <div className={classnames(styles.popup, active === 1 ? styles.active : "")}>
+    <div className={classnames(styles.popup, active ? styles.active : "")}>
       <form
         name="form"
         className={styles.popup__form}
@@ -24,12 +24,12 @@ function Popup({ active, func }) {
               theme: document.form.theme.value,
               message: document.form.message.value,
             }),
-          });
+          }).then((r) => func(!active));
         }}
       >
         <div className={styles.popup__header}>
           <h2 className={styles.popup__title}>Связаться с нами</h2>
-          <button type="button" className={styles.cross} onClick={() => func((active + 1) % 2)}>
+          <button type="button" className={styles.cross} onClick={() => func(!active)}>
             <img className={styles.cross__img} src="cross.svg" alt="Крестик" />
           </button>
         </div>

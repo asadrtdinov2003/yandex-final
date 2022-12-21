@@ -92,3 +92,21 @@
         font-size: 18px;
     }
 }
+
+/**
+  DARK THEME
+**/
+
+.accordion_dark {
+  border-bottom: 3px solid #DABFFF;
+  color: #fff;
+}
+
+.accordion__item_dark {
+  border-top: 3px solid #DABFFF;
+}
+
+.icon_dark::before,
+.icon_dark::after {
+  background-color: #DABFFF;
+}

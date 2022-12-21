@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 import Lightrope from '../Lightrope/Lightrope';
 import Toggle from '../Toggle/Toggle';
 import { ThemeContext } from '../../Contexts/ThemeContext';
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
 function Header() {
   const [active, setActive] = useState(0);
@@ -27,6 +28,7 @@ function Header() {
           </ul>
         </nav>
         <div className={styles.flex}>
+          <LanguageSelector />
           <Toggle />
           <button type="button" className={cn(styles.burger, {[styles.burger_dark]: darkMode})} onClick={() => setActive((active + 1) % 2)}>
             <div className={cn(styles.burger__body, active ? styles.checked : '')}>

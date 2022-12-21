@@ -5,6 +5,7 @@ import './vendor/normalize.css';
 import reportWebVitals from './reportWebVitals';
 import Loading from './components/Loading/Loading';
 import { ThemeContext, ThemeProvider } from './Contexts/ThemeContext';
+import { AppContextProvider } from "./Contexts/AppContextProvider";
 
 const App = React.lazy(() => import('./App/App'));
 
@@ -12,9 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Suspense fallback={<Loading />}>
-      <ThemeProvider>
+      <AppContextProvider>
         <App />
-      </ThemeProvider>
+      </AppContextProvider>
     </Suspense>
   </React.StrictMode>,
 );

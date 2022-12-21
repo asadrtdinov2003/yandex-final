@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import cn from "classnames";
 import { motion, useAnimationControls } from "framer-motion";
 import styles from "./UserCard.module.scss";
@@ -15,12 +15,14 @@ import {
 import discordImage from "../../imgs/Discord.svg";
 import telegramImage from "../../imgs/Telegram.svg";
 import githubImage from "../../imgs/GitHub.svg";
+import { ThemeContext } from "../../Contexts/ThemeContext";
 
 export const UserCard = React.forwardRef(
   (
     { name, avatar, background, job, stack, description, discord, github, telegram, onClick, secondary = false },
     ref
   ) => {
+    const {darkMode} = useContext(ThemeContext);
     const avatarImgRef = useRef(null);
     const isVideo = avatar.split(".").at(-1) === "mp4";
     const listAnimationControls = useAnimationControls();
@@ -33,7 +35,7 @@ export const UserCard = React.forwardRef(
         initial="initial"
         whileHover="hover"
         custom={{ isVideo, secondary }}
-        className={cn(styles.card__outer, { [styles.card_secondary]: secondary })}
+        className={cn(styles.card__outer, { [styles.card_secondary]: secondary, [styles.card__outer_dark]: darkMode })}
         onClick={(e) => {
           onClick && onClick(e);
         }}
@@ -85,7 +87,7 @@ export const UserCard = React.forwardRef(
               <ul className={styles.stack}>
                 {/* Ой как щас буду использовать индекс в key ода  */}
                 {stack.map((el, i) => (
-                  <li className={styles.stack__item} key={i}>
+                  <li className={cn(styles.stack__item, {[styles.stack__item_dark]: darkMode})} key={i}>
                     {el}
                   </li>
                 ))}

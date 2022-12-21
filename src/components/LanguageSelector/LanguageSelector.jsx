@@ -4,7 +4,6 @@ import { LanguageContext } from "../../Contexts/LanguageContext";
 
 const LanguageSelector = () => {
   const {lang, setLang, translation} = useContext(LanguageContext);
-  console.log(translation);
 
   return (
     <div className={styles.languageSelector}>

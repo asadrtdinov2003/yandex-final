@@ -63,5 +63,14 @@
   },
   "footer": {
     "watermark": "produced by WEB"
+  },
+  "popUp": {
+    "title": "GET IN TOUCH",
+    "name": "Name",
+    "email": "E-mail",
+    "topic": "Topic",
+    "message": "Message",
+    "personalData": "I give my consent to the processing of personal data",
+    "send": "send"
   }
 }

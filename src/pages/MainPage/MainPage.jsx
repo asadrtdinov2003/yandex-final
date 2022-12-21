@@ -38,7 +38,7 @@ function MainPage() {
               type="button"
               onClick={() => setPopupActive(1)}
             >
-              {textData['form-button']}
+              {textData.greetings && textData.greetings['form-button']}
             </button>
           </div>
           <div className={cn(styles.mainSection__img, { [styles.mainSection__img_no_hat]: darkMode })}>
@@ -53,11 +53,11 @@ function MainPage() {
         </section>
         <section className={styles.section}>
           <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>{textData.reviews?.title}</h2>
-          <Reviews />
+          <Reviews reviews={textData.reviews?.content}/>
         </section>
         <section className={styles.section}>
           <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>{textData.FAQ?.title}</h2>
-          <Accordion />
+          <Accordion items={textData.FAQ && textData.FAQ['q/a']}/>
         </section>
         <section className={styles.section}>
           <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>{textData.map?.title}</h2>

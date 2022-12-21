@@ -4,7 +4,9 @@ export const LanguageContext = createContext();
 
 
 export function LanguageProvider(props) {
-  const [lang, setLang] = useState(navigator?.language.split('-')[0].toLowerCase() || "en");
+  // TODO: не забыть переключить обратно!!!
+  // const [lang, setLang] = useState(navigator?.language.split('-')[0].toLowerCase() || "en");
+  const [lang, setLang] = useState("ru");
   const [translation, setTranslation] = useState(null);
 
   const setNewTranslation = async lang => {

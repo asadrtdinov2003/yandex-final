@@ -1,1 +1,67 @@
-{}
+{
+  "main": {
+    "greetings": {
+      "title": "WEB - web-development studio",
+      "subtitle": "We will create a full-fledged Web application especially for you in a short time. We also guarantee long-term technical support for your application.",
+      "form-button": "get in touch"
+    },
+    "about": {
+      "title": "ABOUT",
+      "description": "We are a small Web studio with extensive experience working with clients from Russia, Belarus, Kazakhstan and other CIS countries. Our team includes 4 people. The main direction of our activity is development on React. We have hundreds of completed projects and satisfied customers behind us. Reviews of our work are located below. Contact us and we will create a unique website especially for you."
+    },
+    "reviews": {
+      "title": "REVIEWS",
+      "content": [
+        {
+          "id": "kjha1n17asd7-1na",
+          "name": "Josh M.N.",
+          "img": "avatar.png",
+          "review": "I ordered the creation of a website for my auto repair shop in early March. At the end of the month, I was contacted to coordinate the final result. I am happy with the site. We did it quickly and efficiently. I recommend it!"
+        },
+        {
+          "id": "j8ns-3hjd32-djfk",
+          "name": "John A.B.",
+          "img": "avatar.png",
+          "review": "I turned to this web studio on the advice of a friend who has already used their services. As a result, a modern online store with an interesting design was developed for me. The site made it easier to do business, thanks to the studio, it increased sales by about 20%."
+        },
+        {
+          "id": "lre45-78dgfj2jfk",
+          "name": "Anna K.P.",
+          "img": "avatar.png",
+          "review": "At first I thought the price tag was a little too high, but in the end it turned out to be the best offer that I found. Thanks to the team for the website for my educational platform. The students are happy, which means I am too."
+        }
+      ]
+    },
+    "FAQ": {
+      "title": "FAQ",
+      "q/a": [
+        {
+          "q": "How long will it take to develop the application?",
+          "a": "On average, the development of a small application can take up to one month."
+        },
+        {
+          "q": "I can't decide on the design, what should I do?",
+          "a": "No need to worry about it, we will make the design ourselves and coordinate with you. But remember that creating a design will take some time."
+        },
+        {
+          "q": "Do you have an office in Moscow?",
+          "a": "No, we are a small team, so we work only online, but soon we will get a small office in Moscow."
+        },
+        {
+          "q": "Will there be an app support?",
+          "a": "Yes, we will support the application for one year after delivery to the customer. The support includes only maintaining the site's operability."
+        }
+      ]
+    },
+    "map": {
+      "title": "Map"
+    }
+  },
+  "header": {
+    "team": "our team",
+    "projects": "projects"
+  },
+  "footer": {
+    "watermark": "produced by WEB"
+  }
+}

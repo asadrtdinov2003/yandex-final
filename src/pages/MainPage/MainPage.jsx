@@ -7,10 +7,17 @@ import { ThemeContext } from "../../Contexts/ThemeContext";
 import darkPcImage from "../../imgs/dark_pc.png";
 import Popup from "../../components/Popup/Popup";
 import OurMap from "../../components/OurMap/OurMap";
+import { LanguageContext } from "../../Contexts/LanguageContext";
 
 function MainPage() {
   const { darkMode } = useContext(ThemeContext);
+  const { translation } = useContext(LanguageContext);
+  const textData = translation?.main;
   const [popupActive, setPopupActive] = useState(0);
+
+  if (!textData) {
+    return null;
+  }
 
   return (
     <>
@@ -18,10 +25,9 @@ function MainPage() {
       <main className={cn(styles.main, { [styles.background_dark]: darkMode })}>
         <section className={cn(styles.mainSection, styles.section)}>
           <div className={styles.mainSection__body}>
-            <h1 className={cn(styles.title, { [styles.heading_dark]: darkMode })}>WEB - студия веб-разработки</h1>
+            <h1 className={cn(styles.title, { [styles.heading_dark]: darkMode })}>{textData.greetings?.title}</h1>
             <p className={cn(styles.text, { [styles.paragraph_dark]: darkMode })}>
-              Не следует, однако забывать, что дальнейшее развитие различных форм деятельности влечет за собой процесс
-              внедрения и модернизации новых предложений.
+              {textData.greetings?.subtitle}
             </p>
             <button
               className={cn(
@@ -32,7 +38,7 @@ function MainPage() {
               type="button"
               onClick={() => setPopupActive(1)}
             >
-              Связаться с нами
+              {textData['form-button']}
             </button>
           </div>
           <div className={cn(styles.mainSection__img, { [styles.mainSection__img_no_hat]: darkMode })}>
@@ -40,25 +46,21 @@ function MainPage() {
           </div>
         </section>
         <section className={styles.section}>
-          <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>О нас</h2>
+          <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>{textData.about?.title}</h2>
           <p className={cn(styles.text, { [styles.paragraph_dark]: darkMode })}>
-            Равным образом дальнейшее развитие различных форм деятельности требуют от нас анализа позиций, занимаемых
-            участниками в отношении поставленных задач. Не следует, однако забывать, что рамки и место обучения кадров
-            играет важную роль в формировании новых предложений. Идейные соображения высшего порядка, а также
-            сложившаяся структура организации требуют от нас анализа форм развития. Разнообразный и богатый опыт рамки и
-            место обучения кадров играет важную роль в формировании модели развития.
+            {textData.about?.description}
           </p>
         </section>
         <section className={styles.section}>
-          <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>Отзывы</h2>
+          <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>{textData.reviews?.title}</h2>
           <Reviews />
         </section>
         <section className={styles.section}>
-          <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>FAQ</h2>
+          <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>{textData.FAQ?.title}</h2>
           <Accordion />
         </section>
         <section className={styles.section}>
-          <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>Карта</h2>
+          <h2 className={cn(styles.title, styles.title_upper, { [styles.heading_dark]: darkMode })}>{textData.map?.title}</h2>
           <OurMap />
         </section>
       </main>

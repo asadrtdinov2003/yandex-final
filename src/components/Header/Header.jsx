@@ -6,10 +6,17 @@ import Lightrope from '../Lightrope/Lightrope';
 import Toggle from '../Toggle/Toggle';
 import { ThemeContext } from '../../Contexts/ThemeContext';
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
+import { LanguageContext } from "../../Contexts/LanguageContext";
 
 function Header() {
   const [active, setActive] = useState(0);
   const {darkMode} = useContext(ThemeContext);
+  const {translation} = useContext(LanguageContext);
+  const textData = translation?.header;
+
+  if (!textData) {
+    return null;
+  }
 
   return (
     <>
@@ -20,10 +27,10 @@ function Header() {
         <nav className={cn(styles.nav, active ? styles.active : '')}>
           <ul className={styles.nav__body}>
             <NavLink to="teams" className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.tab_dark]: darkMode})}>
-              Наша команда
+              {textData.team}
             </NavLink>
             <NavLink to="projects" className={cn(styles.nav__item, styles.tab, styles.tab_green, {[styles.tab_dark]: darkMode})}>
-              Проекты
+              {textData.projects}
             </NavLink>
           </ul>
         </nav>

@@ -154,7 +154,7 @@
 .card_dark:nth-child(3n + 2) > div {
   background-color: #2C2A4A;
   border: 2px solid #fff;
-  color: #DABFFF;
+  color: #fff;
 }
 
 .card_dark:nth-child(3n + 3) > div {

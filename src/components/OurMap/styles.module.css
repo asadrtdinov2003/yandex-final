@@ -1,6 +1,13 @@
 .map_wrap {
   margin: 0 auto;
-  max-width: 800px;
-  height: 500px;
+  max-width: 80%;
+  height: 700px;
   width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+  .map_wrap {
+    max-width: 100%;
+  }
+
 }

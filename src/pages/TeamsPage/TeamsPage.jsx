@@ -1,36 +1,35 @@
 /* eslint-disable */
 
-import React, { useContext, useEffect, useState } from "react";
-import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
-import styles from "./TeamsPage.module.css";
-import leftArrow from "../../imgs/left-arrow.svg";
-import rightArrow from "../../imgs/right-arrow.svg";
-import { MUserCard } from "../../components/UserCard/UserCard";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
-import { ThemeContext } from "../../Contexts/ThemeContext";
-import cn from "classnames";
-import { LanguageContext } from "../../Contexts/LanguageContext";
+import React, { useContext, useEffect, useState } from 'react';
+import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
+import styles from './TeamsPage.module.css';
+import { MUserCard } from '../../components/UserCard/UserCard';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
+import { ThemeContext } from '../../Contexts/ThemeContext';
+import cn from 'classnames';
+import { LanguageContext } from '../../Contexts/LanguageContext';
+import { useSwipeable } from 'react-swipeable';
 
 const leftCardVariants = {
   initial: { rotate: -4, marginRight: "-5%", filter: "brightness(75%)", y: "100vh" },
   animate: { y: 0 },
-  whileHover: { y: -25, filter: "brightness(80%)" }
+  whileHover: { y: -25, filter: "brightness(80%)" },
 };
 
 const rightCardVariants = {
   initial: { rotate: 4, marginLeft: "-5%", filter: "brightness(75%)", y: "100vh" },
   animate: { y: 0 },
-  whileHover: { y: -25, filter: "brightness(80%)" }
+  whileHover: { y: -25, filter: "brightness(80%)" },
 };
 
 const middleCardVariants = {
   initial: { zIndex: 1, rotate: 0, marginLeft: 0, marginRight: 0, filter: "brightness(100%)", y: "100vh" },
-  animate: { y: 0, zIndex: 1, rotate: 0, marginLeft: 0, marginRight: 0 }
+  animate: { y: 0, zIndex: 1, rotate: 0, marginLeft: 0, marginRight: 0 },
 };
 
 const oneCard = {
   initial: { zIndex: 1, rotate: 0, marginLeft: 0, marginRight: 0, filter: "brightness(100%)", y: 0, opacity: 0 },
-  animate: { opacity: [0, 1], transition: { duration: 0.2 } }
+  animate: { opacity: [0, 1], transition: { duration: 0.2 } },
 };
 
 function shift(arr, direction) {
@@ -50,6 +49,11 @@ function shift(arr, direction) {
 }
 
 function TeamsPage() {
+  const handlers = useSwipeable({
+    onSwipedLeft: () => setUsers(shift(users, -1)),
+    onSwipedRight: () => setUsers(shift(users, 1)),
+  });
+
   const { darkMode } = useContext(ThemeContext);
   const { translation } = useContext(LanguageContext);
   const [users, setUsers] = useState(translation?.team);
@@ -57,8 +61,8 @@ function TeamsPage() {
   const cardAnimationControls = useAnimationControls();
 
   useEffect(() => {
-    setUsers(translation?.team)
-  }, [translation])
+    setUsers(translation?.team);
+  }, [translation]);
 
   if (!users) {
     return null;
@@ -66,22 +70,24 @@ function TeamsPage() {
 
   if (width < 1200) {
     return (
-      <motion.main className={cn(styles.page, { [styles.page_dark]: darkMode })}
-                   initial={{
-                     background: darkMode
-                       ? "radial-gradient(135.39% 135.39% at 50% 50%, #2C2A4A 0%, #2C2A4A 100%)"
-                       : "radial-gradient(135.39% 135.39% at 50% 50%, #FFFFFF 0%, #FFFFFF 100%)",
-                     transition: {duration: 0.1}
-                   }}
-                   animate={{
-                     background: darkMode
-                       ? "radial-gradient(135.39% 135.39% at 50% 50%, #907AD6 0%, #2C2A4A 100%)"
-                       : "radial-gradient(135.39% 135.39% at 50% 50%, #EF233C 0%, rgb(40, 44, 52) 100%)",
-                     transition: {
-                       delay: 1.1
-                     }
-                   }}>
-        <div className={styles.cards}>
+      <motion.main
+        className={cn(styles.page, { [styles.page_dark]: darkMode })}
+        initial={{
+          background: darkMode
+            ? "radial-gradient(135.39% 135.39% at 50% 50%, #2C2A4A 0%, #2C2A4A 100%)"
+            : "radial-gradient(135.39% 135.39% at 50% 50%, #FFFFFF 0%, #FFFFFF 100%)",
+          transition: { duration: 0.1 },
+        }}
+        animate={{
+          background: darkMode
+            ? "radial-gradient(135.39% 135.39% at 50% 50%, #907AD6 0%, #2C2A4A 100%)"
+            : "radial-gradient(135.39% 135.39% at 50% 50%, #EF233C 0%, rgb(40, 44, 52) 100%)",
+          transition: {
+            delay: 1.1,
+          },
+        }}
+      >
+        <div className={styles.cards} {...handlers}>
           <AnimatePresence mode="wait">
             <MUserCard
               {...users[1]}
@@ -95,33 +101,26 @@ function TeamsPage() {
             ;
           </AnimatePresence>
         </div>
-        <div className={styles.buttons}>
-          <button className={styles.buttons__item} onClick={() => setUsers(shift(users, -1))}>
-            <img src={leftArrow} alt="previous" />
-          </button>
-          <button className={styles.buttons__item} onClick={() => setUsers(shift(users, 1))}>
-            <img src={rightArrow} alt="next" />
-          </button>
-        </div>
       </motion.main>
     );
   }
 
   return (
-    <motion.main className={cn(styles.page, { [styles.page_dark]: darkMode })}
-                 initial={{
-                   background: darkMode
-                     ? "radial-gradient(135.39% 135.39% at 50% 50%, #2C2A4A 0%, #2C2A4A 100%)"
-                     : "radial-gradient(135.39% 135.39% at 50% 50%, #FFFFFF 0%, #FFFFFF 100%)"
-                 }}
-                 animate={{
-                   background: darkMode
-                     ? "radial-gradient(135.39% 135.39% at 50% 50%, #907AD6 0%, #2C2A4A 100%)"
-                     : "radial-gradient(135.39% 135.39% at 50% 50%, #EF233C 0%, rgb(40, 44, 52) 100%)",
-                   transition: {
-                     delay: 1.1
-                   }
-                 }}
+    <motion.main
+      className={cn(styles.page, { [styles.page_dark]: darkMode })}
+      initial={{
+        background: darkMode
+          ? "radial-gradient(135.39% 135.39% at 50% 50%, #2C2A4A 0%, #2C2A4A 100%)"
+          : "radial-gradient(135.39% 135.39% at 50% 50%, #FFFFFF 0%, #FFFFFF 100%)",
+      }}
+      animate={{
+        background: darkMode
+          ? "radial-gradient(135.39% 135.39% at 50% 50%, #907AD6 0%, #2C2A4A 100%)"
+          : "radial-gradient(135.39% 135.39% at 50% 50%, #EF233C 0%, rgb(40, 44, 52) 100%)",
+        transition: {
+          delay: 1.1,
+        },
+      }}
     >
       <div className={styles.cards}>
         <AnimatePresence mode="popLayout">
@@ -167,8 +166,7 @@ function TeamsPage() {
                   animate="animate"
                   secondary={false}
                   variants={middleCardVariants}
-                  onClick={() => {
-                  }}
+                  onClick={() => {}}
                 />
               );
             }

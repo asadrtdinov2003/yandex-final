@@ -88,7 +88,7 @@
       ],
       "description": "Профессиональный фронтенд разработчик. Создает потрясающие интерфейсы для веб-приложений.",
       "background": "backgrounds/card-bg.png",
-      "avatar": "avatars/avatar.png",
+      "avatar": "avatars/timurAvatar.mp4",
       "discord": "https://discord.com/",
       "telegram": "https://telegram.com",
       "github": "https://github.com"
@@ -118,7 +118,7 @@
       ],
       "description": "Разрабатывает серверные части веб-приложений. Предпочитает использовать Node.js с фреймворком Express.js.",
       "background": "backgrounds/card-bg2.jpg",
-      "avatar": "avatars/avatar2.png",
+      "avatar": "avatars/vladislaveAvatar.mp4",
       "discord": "https://discord.com/",
       "telegram": "https://telegram.com",
       "github": "https://github.com"
@@ -133,7 +133,7 @@
       ],
       "description": "Занимается архитектурой наших приложений. Так же он проверяет процесс разработки и следит за статусом приложения.",
       "background": "backgrounds/card-bg.png",
-      "avatar": "avatars/avatar.png",
+      "avatar": "avatars/semenAvatar.mp4",
       "discord": "https://discord.com/",
       "telegram": "https://telegram.com",
       "github": "https://github.com"

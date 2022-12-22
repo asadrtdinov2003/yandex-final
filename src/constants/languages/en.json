@@ -84,7 +84,7 @@
       ],
       "description": "Professional frontend developer. Creates amazing interfaces for web applications.",
       "background": "backgrounds/card-bg.png",
-      "avatar": "avatars/avatar.png",
+      "avatar": "avatars/timurAvatar.mp4",
       "discord": "https://discord.com/",
       "telegram": "https://telegram.com",
       "github": "https://github.com"
@@ -114,7 +114,7 @@
       ],
       "description": "Develops server parts of web applications. Prefers to use Node.js from the framework Express.js .",
       "background": "backgrounds/card-bg2.jpg",
-      "avatar": "avatars/avatar2.png",
+      "avatar": "avatars/vladislaveAvatar.mp4",
       "discord": "https://discord.com/",
       "telegram": "https://telegram.com",
       "github": "https://github.com"
@@ -129,7 +129,7 @@
       ],
       "description": "Deals with the architecture of our applications. It also checks the development process and monitors the status of the application.",
       "background": "backgrounds/card-bg.png",
-      "avatar": "avatars/avatar.png",
+      "avatar": "avatars/semenAvatar.mp4",
       "discord": "https://discord.com/",
       "telegram": "https://telegram.com",
       "github": "https://github.com"

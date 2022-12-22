@@ -1,5 +1,4 @@
 import "./App.css";
-import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import AnimatedRoutes from "../components/AnimatedRoutes/AnimatedRoutes";
 

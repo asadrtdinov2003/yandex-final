@@ -23,6 +23,8 @@
 
 .imgs {
   border-radius: 18px 18px 0 0;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
 }
 
 .date_type {

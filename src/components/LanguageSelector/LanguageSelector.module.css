@@ -1,0 +1,17 @@
+.languageSelector {
+  font-size: 2rem;
+}
+
+.languageSelector__btn {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.languageSelector__btn_selected {
+  font-weight: bold;
+}

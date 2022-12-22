@@ -19,7 +19,7 @@ import { ThemeContext } from "../../Contexts/ThemeContext";
 
 export const UserCard = React.forwardRef(
   (
-    { name, avatar, background, job, stack, description, discord, github, telegram, onClick, secondary = false },
+    { name, avatar, background, job, stack, description, discord, github, telegram, onClick, secondary = false, oneCard = false },
     ref
   ) => {
     const {darkMode} = useContext(ThemeContext);
@@ -34,11 +34,19 @@ export const UserCard = React.forwardRef(
         whileTap="hover"
         initial="initial"
         whileHover="hover"
+        whileInView={oneCard && "hover"}
+        onViewportEnter={() => {
+          if (oneCard) {
+            isVideo && avatarImgRef.current.play();
+            listAnimationControls.start("hover");
+          }
+        }}
         custom={{ isVideo, secondary }}
         className={cn(styles.card__outer, { [styles.card_secondary]: secondary, [styles.card__outer_dark]: darkMode })}
         onClick={(e) => {
           onClick && onClick(e);
         }}
+
         onHoverStart={async () => {
           avatarImgRef?.current?.play();
           listAnimationControls.start("hover");

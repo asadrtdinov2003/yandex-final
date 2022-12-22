@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
 import styles from "./styles.module.css";
@@ -24,7 +24,7 @@ function Header() {
         <NavLink to="/" className={cn(styles.logo, styles.tab, { [styles.text_dark]: darkMode })}>
           WEB
         </NavLink>
-        <nav className={cn(styles.nav, active ? styles.active : "")}>
+        <nav className={cn(styles.nav, active ? styles.active : "", { [styles.nav_dark]: darkMode })}>
           <ul className={styles.nav__body}>
             <NavLink
               to="teams"
@@ -38,10 +38,10 @@ function Header() {
             >
               {textData.projects}
             </NavLink>
+            <LanguageSelector />
           </ul>
         </nav>
         <div className={styles.flex}>
-          <LanguageSelector />
           <Toggle />
           <button
             type="button"
@@ -49,6 +49,7 @@ function Header() {
             onClick={() => setActive((active + 1) % 2)}
           >
             <div className={cn(styles.burger__body, active ? styles.checked : "")}>
+              <div className={styles.burger__item} />
               <div className={styles.burger__item} />
               <div className={styles.burger__item} />
             </div>

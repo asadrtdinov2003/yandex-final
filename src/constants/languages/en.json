@@ -37,19 +37,23 @@
       "q/a": [
         {
           "q": "How long will it take to develop the application?",
-          "a": "On average, the development of a small application can take up to one month."
+          "a": "On average, the development of a small application can take up to one month.",
+          "id": "j8j23-adj4k8fgh"
         },
         {
           "q": "I can't decide on the design, what should I do?",
-          "a": "No need to worry about it, we will make the design ourselves and coordinate with you. But remember that creating a design will take some time."
+          "a": "No need to worry about it, we will make the design ourselves and coordinate with you. But remember that creating a design will take some time.",
+          "id": "jd84-djfks8dsa5jk"
         },
         {
           "q": "Do you have an office in Moscow?",
-          "a": "No, we are a small team, so we work only online, but soon we will get a small office in Moscow."
+          "a": "No, we are a small team, so we work only online, but soon we will get a small office in Moscow.",
+          "id": "js8a94-sdjck4fgh"
         },
         {
           "q": "Will there be an app support?",
-          "a": "Yes, we will support the application for one year after delivery to the customer. The support includes only maintaining the site's operability."
+          "a": "Yes, we will support the application for one year after delivery to the customer. The support includes only maintaining the site's operability.",
+          "id": "j8j23-adj4k82fds"
         }
       ]
     },

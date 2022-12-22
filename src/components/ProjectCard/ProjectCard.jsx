@@ -12,8 +12,6 @@ function ProjectCard(props) {
     );
   })
 
-  console.log(props.image);
-
   return (
     <div className={cn(s.project_card, props.classname)}>
       <img src={props.image} className={s.imgs} alt="img" width="100%" />

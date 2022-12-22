@@ -1,0 +1,8 @@
+.outer_page {
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+.outer_page_dark {
+  background-color: #2C2A4A;
+}

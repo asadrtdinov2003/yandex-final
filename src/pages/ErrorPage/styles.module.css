@@ -1,0 +1,33 @@
+.main {
+    padding: 3% 130px 5% 130px;
+    height: 62vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    color: #DB4350;
+    font-size: 120px;
+    font-weight: 900;
+    margin: 30px 0;
+}
+
+.text {
+    color: #000;
+    font-size: 28px;
+}
+
+@media screen and (max-width: 700px) {
+    .main {
+        padding: 3% 40px 5% 40px;
+    }
+}
+
+.title_dark {
+    color: #fff;
+}
+
+.text_dark {
+    color: #DABFFF;
+}

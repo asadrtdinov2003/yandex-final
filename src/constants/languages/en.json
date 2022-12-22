@@ -1,0 +1,249 @@
+{
+  "main": {
+    "greetings": {
+      "title": "WEB — web‑development studio",
+      "subtitle": "We will create a full-fledged Web application especially for you in a short time. We also guarantee long-term technical support for your application.",
+      "form-button": "get in touch"
+    },
+    "about": {
+      "title": "ABOUT",
+      "description": "We are a small Web studio with extensive experience working with clients from Russia, Belarus, Kazakhstan and other CIS countries. Our team includes 4 people. The main direction of our activity is development on React. We have hundreds of completed projects and satisfied customers behind us. Reviews of our work are located below. Contact us and we will create a unique website especially for you."
+    },
+    "reviews": {
+      "title": "REVIEWS",
+      "content": [
+        {
+          "id": "kjha1n17asd7-1na",
+          "name": "Josh M.N.",
+          "img": "avatars/avatar.png",
+          "review": "I ordered the creation of a website for my auto repair shop in early March. At the end of the month, I was contacted to coordinate the final result. I am happy with the site. We did it quickly and efficiently. I recommend it!"
+        },
+        {
+          "id": "j8ns-3hjd32-djfk",
+          "name": "John A.B.",
+          "img": "avatars/avatar.png",
+          "review": "I turned to this web studio on the advice of a friend who has already used their services. As a result, a modern online store with an interesting design was developed for me. The site made it easier to do business, thanks to the studio, it increased sales by about 20%."
+        },
+        {
+          "id": "lre45-78dgfj2jfk",
+          "name": "Anna K.P.",
+          "img": "avatars/avatar.png",
+          "review": "At first I thought the price tag was a little too high, but in the end it turned out to be the best offer that I found. Thanks to the team for the website for my educational platform. The students are happy, which means I am too."
+        }
+      ]
+    },
+    "FAQ": {
+      "title": "FAQ",
+      "q/a": [
+        {
+          "q": "How long will it take to develop the application?",
+          "a": "On average, the development of a small application can take up to one month.",
+          "id": "j8j23-adj4k8fgh"
+        },
+        {
+          "q": "I can't decide on the design, what should I do?",
+          "a": "No need to worry about it, we will make the design ourselves and coordinate with you. But remember that creating a design will take some time.",
+          "id": "jd84-djfks8dsa5jk"
+        },
+        {
+          "q": "Do you have an office in Moscow?",
+          "a": "No, we are a small team, so we work only online, but soon we will get a small office in Moscow.",
+          "id": "js8a94-sdjck4fgh"
+        },
+        {
+          "q": "Will there be an app support?",
+          "a": "Yes, we will support the application for one year after delivery to the customer. The support includes only maintaining the site's operability.",
+          "id": "j8j23-adj4k82fds"
+        }
+      ]
+    },
+    "map": {
+      "title": "Map"
+    }
+  },
+  "header": {
+    "team": "our team",
+    "projects": "projects"
+  },
+  "footer": {
+    "watermark": "produced by "
+  },
+  "popUp": {
+    "title": "GET IN TOUCH",
+    "name": "Name",
+    "email": "E-mail",
+    "topic": "Topic",
+    "message": "Message",
+    "personalData": "I give my consent to the processing of personal data",
+    "send": "send"
+  },
+  "team": [
+    {
+      "name": "Timur Kovalev",
+      "job": "Frontend-developer",
+      "stack": [
+        "js",
+        "html",
+        "css"
+      ],
+      "description": "Professional frontend developer. Creates amazing interfaces for web applications.",
+      "background": "backgrounds/card-bg.png",
+      "avatar": "avatars/timurAvatar.mp4",
+      "discord": "https://discord.com/",
+      "telegram": "https://telegram.com",
+      "github": "https://github.com"
+    },
+    {
+      "name": "Palkin Ruslan",
+      "job": "Mobile-developer",
+      "stack": [
+        "scss",
+        "react",
+        "c++"
+      ],
+      "description": "Developer of software for mobile devices. Mastered react native and creates interfaces for phones.",
+      "background": "backgrounds/card-bg2.jpg",
+      "avatar": "avatars/RusandorAvatar.mp4",
+      "discord": "https://discord.com/",
+      "telegram": "https://telegram.com",
+      "github": "https://github.com"
+    },
+    {
+      "name": "Yurkov Vladislav",
+      "job": "Backend-developer",
+      "stack": [
+        "c#",
+        "node.js",
+        "express"
+      ],
+      "description": "Develops server parts of web applications. Prefers to use Node.js from the framework Express.js .",
+      "background": "backgrounds/card-bg2.jpg",
+      "avatar": "avatars/vladislaveAvatar.mp4",
+      "discord": "https://discord.com/",
+      "telegram": "https://telegram.com",
+      "github": "https://github.com"
+    },
+    {
+      "name": "Komissarov Simen",
+      "job": "Software Architect",
+      "stack": [
+        "Python",
+        "Ruby",
+        "Go"
+      ],
+      "description": "Deals with the architecture of our applications. It also checks the development process and monitors the status of the application.",
+      "background": "backgrounds/card-bg.png",
+      "avatar": "avatars/semenAvatar.mp4",
+      "discord": "https://discord.com/",
+      "telegram": "https://telegram.com",
+      "github": "https://github.com"
+    }
+  ],
+  "projects": {
+    "title": "Our projects",
+    "button": "load more",
+    "data": [
+      {
+        "name": "Netflix",
+        "date": "1/10/20",
+        "type": "Personal project",
+        "tags": [
+          "JS",
+          "CSS",
+          "React",
+          "MongoDB"
+        ],
+        "author": "Timur Kovalev",
+        "description": "Let’s master our CSS skills a little more by making a Netflix home page clone using HTML, CSS, and JavaScript This will not only help you to master your skills, in addition, you will also learn about Positioning, and CSS Grids as well. You will also get a feel as to how developers work when they are given a design and are to make an exact copy of it.",
+        "image": "project1.png"
+      },
+      {
+        "name": "Background Generator",
+        "date": "22/11/22",
+        "type": "Personal project",
+        "tags": [
+          "CSS",
+          "Node.js",
+          "MongoDB"
+        ],
+        "author": "Palkin Ruslan",
+        "description": "As a Next step, it’s time to have an understanding of some basic JavaScript. How about making a basic background or gradient color generator, where you will choose a color from the palette and that color will become the background. This project aims to find the best-looking background gradient for your project. You just have to select the colors you want from the color picker and then copy the code displayed and paste it into your code as a background color. It’s That Simple!",
+        "image": "project2.png"
+      },
+      {
+        "name": "Restaurant Website",
+        "date": "25/8/22",
+        "type": "Personal project",
+        "tags": [
+          "JS",
+          "CSS",
+          "React",
+          "MongoDB"
+        ],
+        "author": "Timur Kovalev",
+        "description": "Do you always wonder how I design a Restaurant Website had I been given a chance to do so?We cannot give you a chance to do so now, however, you can make one for yourself and add it to your portfolio using your skills.This project aims to create a fully responsive restaurant website, you can add many pages and links to your website. You can extend the functionality by connecting it with a real-time database and allowing users to order food online.",
+        "image": "project3.png"
+      },
+      {
+        "name": "Basic Portfolio Website",
+        "date": "22/11/22",
+        "type": "Personal project",
+        "tags": [
+          "Python",
+          "CSS",
+          "Qt",
+          "MongoDB"
+        ],
+        "author": "Yurkov Vladislav",
+        "description": "After building a complete restaurant website by yourself, you should now be confident in your skills. However, Practice makes Perfect.\n\nIn the next step, you must try making your own portfolio website for yourself. Showcase your projects, your social media handles, your experience on the website. You can refer to some templates available for free on Google for that.",
+        "image": "project4.png"
+      },
+      {
+        "name": "Transcript Summarizer for Youtube",
+        "date": "2/7/19",
+        "type": "Group project",
+        "tags": [
+          "Sass",
+          "Vue",
+          "Material ui"
+        ],
+        "author": "Komissarov Simon",
+        "description": "As a Computer Science student, you learn on a daily basis from videos, articles, documentation, and so on. A majority of learning happens through Youtube as well.\nPS Youtube also provides entertainment.\n\nA lot of time can be saved if you can summarize the content of the youtube videos. In this project, you will be creating a Chrome Extension which will make a request to the backend REST API where it will perform NLP and respond with a summarized version of a YouTube transcript.",
+        "image": "project5.png"
+      },
+      {
+        "name": "To do List App",
+        "date": "21/6/18",
+        "type": "Group project",
+        "tags": [
+          "JS",
+          "CSS",
+          "React",
+          "MongoDB"
+        ],
+        "author": "WEB",
+        "description": "his is a common project that all web developers have done at least once in their lifetime. Not only will this help you to keep track of your daily tasks but is a good project too at least at the beginner level. You can connect it with a database to store the daily tasks, the benefit of storing daily tasks in a database will be, you can, later on, add delete functionality to it. If a user by mistake deletes a todo, you can give the privilege to restore it.",
+        "image": "project6.png"
+      },
+      {
+        "name": "Link Shortener",
+        "date": "22/11/22",
+        "type": "Personal project",
+        "tags": [
+          "HTML",
+          "CSS",
+          "Angular",
+          "MySQL"
+        ],
+        "author": "Yurkov Vladislav",
+        "description": "In this project, you will be required to make an API to build short URLs. The functionality will be similar to bitly. Using Node, Express, and MongoDB you can make your own URL Shortener service. However, you can use any backend language also depending on your expertise. The project is not specific to any particular backend language.",
+        "image": "project7.png"
+      }
+    ]
+  },
+  "error": {
+    "title": "404",
+    "text": "Unfortunately, this page does not exist. You can return to the main page and try typing the address again",
+    "button": "Return"
+  }
+}

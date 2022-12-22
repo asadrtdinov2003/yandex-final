@@ -149,7 +149,7 @@
           "React",
           "MongoDB"
         ],
-        "author": "Joe Est",
+        "author": "Timur Kovalev",
         "description": "Let’s master our CSS skills a little more by making a Netflix home page clone using HTML, CSS, and JavaScript This will not only help you to master your skills, in addition, you will also learn about Positioning, and CSS Grids as well. You will also get a feel as to how developers work when they are given a design and are to make an exact copy of it.",
         "image": "project1.png"
       },
@@ -231,7 +231,7 @@
           "Angular",
           "MySQL"
         ],
-        "author": "Joe Est",
+        "author": "Yurkov Vladislav",
         "description": "In this project, you will be required to make an API to build short URLs. The functionality will be similar to bitly. Using Node, Express, and MongoDB you can make your own URL Shortener service. However, you can use any backend language also depending on your expertise. The project is not specific to any particular backend language.",
         "image": "project7.png"
       }

@@ -236,6 +236,10 @@
         "image": "project7.png"
       }
     ]
+  },
+  "error": {
+    "title": "404",
+    "text": "Unfortunately, this page does not exist. You can return to the main page and try typing the address again",
+    "button": "Return"
   }
-
 }

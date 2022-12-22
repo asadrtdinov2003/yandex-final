@@ -5,6 +5,7 @@ import Layout from "../Layout/Layout";
 import MainPage from "../../pages/MainPage/MainPage";
 import ProjectsPage from "../../pages/ProjectsPage/ProjectsPage";
 import TeamsPage from "../../pages/TeamsPage/TeamsPage";
+import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -21,7 +22,7 @@ function AnimatedRoutes() {
           <Route index element={<MainPage />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="teams" element={<TeamsPage />} />
-          <Route path="*" element={<div>404</div>} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </AnimatePresence>

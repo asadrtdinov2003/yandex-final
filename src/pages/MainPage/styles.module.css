@@ -2,9 +2,6 @@
     padding: 3% 130px 5% 130px;
 }
 
-.section {
-}
-
 .mainSection {
     display: flex;
     align-items: flex-end;
@@ -129,7 +126,7 @@
 }
 
 .paragraph_dark {
-  color: #907AD6;
+  color: #DABFFF;
 }
 
 .button_dark {

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useContext, useEffect } from "react";
 import cn from "classnames";
 import styles from "./styles.module.css";

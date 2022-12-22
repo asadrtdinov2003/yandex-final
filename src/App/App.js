@@ -4,9 +4,9 @@ import AnimatedRoutes from "../components/AnimatedRoutes/AnimatedRoutes";
 
 function App() {
   return (
-      <BrowserRouter>
-        <AnimatedRoutes />
-      </BrowserRouter>
+    <BrowserRouter>
+      <AnimatedRoutes />
+    </BrowserRouter>
   );
 }
 

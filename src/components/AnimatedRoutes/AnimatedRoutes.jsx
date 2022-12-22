@@ -1,15 +1,21 @@
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Layout from "../Layout/Layout";
 import MainPage from "../../pages/MainPage/MainPage";
 import ProjectsPage from "../../pages/ProjectsPage/ProjectsPage";
 import TeamsPage from "../../pages/TeamsPage/TeamsPage";
-import { AnimatePresence } from "framer-motion";
 
-const AnimatedRoutes = () => {
+function AnimatedRoutes() {
   const location = useLocation();
   return (
-    <AnimatePresence mode="wait" onExitComplete={() => {window.scrollTo(0, 0);}} initial={false}>
+    <AnimatePresence
+      mode="wait"
+      onExitComplete={() => {
+        window.scrollTo(0, 0);
+      }}
+      initial={false}
+    >
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
@@ -20,6 +26,6 @@ const AnimatedRoutes = () => {
       </Routes>
     </AnimatePresence>
   );
-};
+}
 
 export default AnimatedRoutes;

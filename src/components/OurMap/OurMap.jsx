@@ -1,5 +1,4 @@
 import React from "react";
-import { points } from "../../constants/points";
 import {
   Clusterer,
   FullscreenControl,
@@ -9,6 +8,7 @@ import {
   YMaps,
   ZoomControl,
 } from "@pbe/react-yandex-maps";
+import { points } from "../../constants/points";
 import style from "./styles.module.css";
 
 const defaultState = {
@@ -22,8 +22,8 @@ function OurMap() {
       <YMaps>
         <Map
           defaultState={defaultState}
-          width={"100%"}
-          height={"100%"}
+          width="100%"
+          height="100%"
           modules={["geoObject.addon.balloon", "geoObject.addon.hint"]}
         >
           <FullscreenControl />

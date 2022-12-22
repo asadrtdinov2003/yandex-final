@@ -52,7 +52,7 @@ export const points = [
     coords: [53.357572, 83.663018],
     color: "#f39a2b",
     title: "Юрта Владика",
-    description: "Тут Семен существует",
+    description: "Тут Владик существует",
     hint: "Да, я из сибири",
   },
   {

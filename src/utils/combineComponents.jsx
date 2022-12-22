@@ -1,9 +1,9 @@
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps } from "react";
 
 export const combineComponents = (...components) => {
   return components.reduce(
     (AccumulatedComponents, CurrentComponent) => {
-      return ({ children }: ComponentProps) => {
+      return function ({ children }: ComponentProps) {
         return (
           <AccumulatedComponents>
             <CurrentComponent>{children}</CurrentComponent>
@@ -11,6 +11,6 @@ export const combineComponents = (...components) => {
         );
       };
     },
-    ({ children }) => <>{children}</>,
+    ({ children }) => <>{children}</>
   );
 };

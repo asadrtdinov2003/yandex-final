@@ -3,15 +3,33 @@
 }
 
 .languageSelector__btn {
-  background: none;
-  color: inherit;
+  background-color: #3ea37e;
+  color: #fff;
+  transition: 0.15s;
   border: none;
   padding: 0;
-  font: inherit;
   cursor: pointer;
-  outline: inherit;
+  padding: 8px 19px;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 2px;
 }
 
 .languageSelector__btn_selected {
-  font-weight: bold;
+  background-color: #DB4350;
+}
+
+.languageSelector__btn_dark {
+  background-color: #2C2A4A;
+}
+
+.languageSelector__btn_selected.languageSelector__btn_dark {
+  background-color: #907AD6;
+}
+
+@media screen and (max-width: 1100px) {
+  .languageSelector__btn {
+      margin: 10px 0;
+  }
 }
